@@ -8,6 +8,149 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    .contact-page-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 48px 120px;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-page-left h1 {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 3.2rem;
+      font-weight: 400;
+      line-height: 1.15;
+      color: #2C2416;
+      margin-bottom: 28px;
+    }
+
+    .contact-page-left .intro-text {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 1rem;
+      color: #6B5B47;
+      line-height: 1.75;
+      margin-bottom: 16px;
+      max-width: 480px;
+    }
+
+    .contact-page-form {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-name-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contact-page-form .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .contact-page-form label {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #8C7B6A;
+    }
+
+    .contact-page-form input,
+    .contact-page-form textarea {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #2C2416;
+      background: #EDE8DE;
+      border: 1px solid #DDD5C5;
+      border-radius: 8px;
+      padding: 12px 16px;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.2s, background 0.2s;
+      outline: none;
+    }
+
+    .contact-page-form input::placeholder,
+    .contact-page-form textarea::placeholder {
+      color: #A89880;
+    }
+
+    .contact-page-form input:focus,
+    .contact-page-form textarea:focus {
+      border-color: #2C2416;
+      background: #F0EBE1;
+    }
+
+    .contact-page-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-page-form .send-btn {
+      font-family: 'Bitter', Georgia, serif;
+      align-self: flex-start;
+      padding: 12px 32px;
+      background: #2C2416;
+      color: #F5F0E8;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .contact-page-form .send-btn:hover {
+      background: #4A3C2C;
+    }
+
+    .contact-page-right {
+      position: sticky;
+      top: 88px;
+    }
+
+    .contact-page-right img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 16px;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .contact-page-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 60px 24px 80px;
+      }
+
+      .contact-page-right {
+        position: static;
+        order: -1;
+      }
+
+      .contact-page-right img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .contact-page-left h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -24,87 +167,48 @@
 
   <!-- Page Content -->
   <main class="page">
-    <div class="contact-container">
+    <div class="contact-page-grid">
 
-      <!-- Header -->
-      <div class="contact-header">
+      <!-- Left: Title + Text + Form -->
+      <div class="contact-page-left">
         <h1>Let's Work<br/>Together</h1>
-        <p>
+        <p class="intro-text">
           I'm particularly interested in how AI shapes human behavior, design decisions,
-          and user experience. Open to research collaboration, lab opportunities,
-          or academic conversations.
+          and user experience.
         </p>
+        <p class="intro-text">
+          Open to research collaboration, lab opportunities, or academic conversations.
+          Feel free to reach out — I'd love to connect.
+        </p>
+
+        <form class="contact-page-form" action="https://formspree.io/f/mrerlqrr" method="POST">
+          <div class="form-name-row">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first_name" required placeholder="First name" />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last_name" required placeholder="Last name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Your message..."></textarea>
+          </div>
+          <button type="submit" class="send-btn">Send</button>
+        </form>
       </div>
 
-      <!-- Contact Grid -->
-      <div class="contact-grid">
-
-        <!-- Left: Info + Form -->
-        <div>
-          <div class="contact-info-group">
-            <p class="label">Location</p>
-            <p class="value">9450 Gilman Dr, La Jolla, CA</p>
-          </div>
-
-          <div class="contact-info-group">
-            <p class="label">Email</p>
-            <p class="value">
-              <a href="mailto:xinyi0765@gmail.com">xinyi0765@gmail.com</a><br/>
-              <a href="mailto:xil278@ucsd.edu">xil278@ucsd.edu</a>
-            </p>
-          </div>
-
-          <div class="contact-info-group">
-            <p class="label">Phone</p>
-            <p class="value">
-              <a href="tel:8584026254">858-402-6254</a>
-            </p>
-          </div>
-
-          <div class="contact-info-group">
-            <p class="label">Connect</p>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/xinyi-liu-228059387" target="_blank" rel="noopener" class="social-link">
-                <span class="icon">in</span>
-                LinkedIn
-              </a>
-              <a href="mailto:xinyi0765@gmail.com" class="social-link">
-                <span class="icon">✉</span>
-                Send an email
-              </a>
-            </div>
-          </div>
-
-          <!-- Contact Form -->
-          <form class="contact-form" action="https://formspree.io/f/mrerlqrr" method="POST">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required placeholder="Your name" />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="your@email.com" />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required placeholder="Your message..."></textarea>
-            </div>
-            <button type="submit" class="form-submit">Send Message</button>
-          </form>
-        </div>
-
-        <!-- Right: Photo Card -->
-        <div class="contact-photo-card">
-          <div class="contact-photo">
-            <img src="Contact.JPG" alt="Xinyi Liu" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
-          </div>
-          <div class="contact-photo-info">
-            <h3>Xinyi (Berenic) Liu</h3>
-            <p>Exploring Design, HCI, AI, and Human Behavior</p>
-          </div>
-        </div>
-
+      <!-- Right: Photo -->
+      <div class="contact-page-right">
+        <img src="Contact.JPG" alt="Xinyi Liu" />
       </div>
+
     </div>
   </main>
 

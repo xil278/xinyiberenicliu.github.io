@@ -411,8 +411,8 @@ nav {
 }
 
 .resume-item-left h3 {
-  font-family: 'Libre Baskerville', Georgia, serif;
-  font-size: 16px;
+  font-family: 'PT Serif', Georgia, serif;
+  font-size: 1rem;
   font-weight: 400;
   color: #2C2416;
   margin-bottom: 2px;
@@ -420,14 +420,14 @@ nav {
 
 .resume-item-left .org {
   font-family: 'PT Serif', Georgia, serif;
-  font-size: 14px;
+  font-size: 1rem;
   color: #4A3C2C;
   margin-bottom: 4px;
 }
 
 .resume-item-left .location {
   font-family: 'PT Serif', Georgia, serif;
-  font-size: 13px;
+  font-size: 1rem;
   color: #A89880;
   margin-bottom: 10px;
 }
@@ -439,7 +439,7 @@ nav {
 
 .resume-item-right .date {
   font-family: 'PT Serif', Georgia, serif;
-  font-size: 13px;
+  font-size: 1rem;
   color: #A89880;
 }
 
@@ -450,7 +450,7 @@ nav {
 
 .resume-bullets li {
   font-family: 'PT Serif', Georgia, serif;
-  font-size: 14px;
+  font-size: 1rem;
   color: #6B5B47;
   line-height: 1.7;
   padding-left: 14px;
