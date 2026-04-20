@@ -46,7 +46,7 @@ nav {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #DDD5C5;
   padding: 0 48px;
-  height: 64px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,7 +68,7 @@ nav {
 
 .nav-links a {
   font-family: 'Bitter', Georgia, serif;
-  font-size: 14px;
+  font-size: 1.1rem;
   font-weight: 400;
   color: #6B5B47;
   letter-spacing: 0.02em;
