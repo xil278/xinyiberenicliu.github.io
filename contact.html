@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -39,7 +39,7 @@
       <!-- Contact Grid -->
       <div class="contact-grid">
 
-        <!-- Left: Info -->
+        <!-- Left: Info + Form -->
         <div>
           <div class="contact-info-group">
             <p class="label">Location</p>
@@ -74,6 +74,23 @@
               </a>
             </div>
           </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form" action="https://formspree.io/f/mrerlqrr" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="Your message..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message</button>
+          </form>
         </div>
 
         <!-- Right: Photo Card -->
