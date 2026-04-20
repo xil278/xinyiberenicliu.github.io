@@ -46,7 +46,7 @@ nav {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #DDD5C5;
   padding: 0 48px;
-  height: 0.8vw;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
