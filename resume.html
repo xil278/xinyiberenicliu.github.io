@@ -8,6 +8,76 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    .resume-page-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 48px 120px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .resume-left {
+      position: sticky;
+      top: 88px;
+    }
+
+    .resume-left h1 {
+      font-family: 'Young Serif', Georgia, serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #2C2416;
+      margin-bottom: 28px;
+    }
+
+    .resume-link {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 13px;
+      color: #6B5B47;
+      border-bottom: 1px solid #C4B9A8;
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .resume-link:hover {
+      color: #2C2416;
+      border-color: #2C2416;
+    }
+
+    /* Accordion overrides for + / - toggle */
+    .accordion-toggle {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: #8C7B6A;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+
+    .accordion-section summary:hover .accordion-toggle {
+      color: #2C2416;
+    }
+
+    @media (max-width: 900px) {
+      .resume-page-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 60px 24px 80px;
+      }
+
+      .resume-left {
+        position: static;
+      }
+
+      .resume-left h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -24,336 +94,323 @@
 
   <!-- Page Content -->
   <main class="page">
-    <div class="resume-container">
+    <div class="resume-page-grid">
 
-      <!-- Header -->
-      <div class="resume-header">
-        <h1>Xinyi (Berenic) Liu</h1>
-        <p class="subtitle">Exploring Design, HCI, AI, and Human Behavior</p>
-        <div class="contact-line">
-          <span>xinyi0765@gmail.com</span>
-          <span>xil278@ucsd.edu</span>
-          <span>858-402-6254</span>
-          <span>9450 Gilman Dr, La Jolla, CA</span>
-          <span>linkedin.com/in/xinyi-liu-228059387</span>
-        </div>
+      <!-- Left: Title + Link -->
+      <div class="resume-left">
+        <h1>Resume</h1>
+        <a class="resume-link" href="https://drive.google.com/file/d/1uK5LlY_avVFPq638ulOS8lUYrYStQS-4/view" target="_blank" rel="noopener">Resume Link</a>
       </div>
 
-      <!-- Education -->
-      <details class="accordion-section" open>
-        <summary>
-          <span class="accordion-title">Education</span>
-          <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </summary>
-        <div class="accordion-body">
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>University of California, San Diego</h3>
-              <p class="org">B.S. Cognitive Science — Specialization in Design &amp; Interaction</p>
-              <p class="location">La Jolla, CA</p>
-              <ul class="resume-bullets">
-                <li>Minor in Technology, Innovation &amp; Supply Chain</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">Sep 2024 — Present</span>
+      <!-- Right: Accordion -->
+      <div class="resume-right">
+
+        <!-- Education -->
+        <details class="accordion-section">
+          <summary>
+            <span class="accordion-title">Education</span>
+            <span class="accordion-toggle">+</span>
+          </summary>
+          <div class="accordion-body">
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>University of California, San Diego</h3>
+                <p class="org">B.S. Cognitive Science — Specialization in Design &amp; Interaction</p>
+                <p class="location">La Jolla, CA</p>
+                <ul class="resume-bullets">
+                  <li>Minor in Technology, Innovation &amp; Supply Chain</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Sep 2024 — Present</span>
+              </div>
             </div>
           </div>
-        </div>
-      </details>
+        </details>
 
-      <!-- Experience -->
-      <details class="accordion-section" open>
-        <summary>
-          <span class="accordion-title">Experience</span>
-          <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </summary>
-        <div class="accordion-body">
+        <!-- Experience -->
+        <details class="accordion-section">
+          <summary>
+            <span class="accordion-title">Experience</span>
+            <span class="accordion-toggle">+</span>
+          </summary>
+          <div class="accordion-body">
 
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>Pedagogy &amp; Learning Apprentice</h3>
-              <p class="org">UCSD — Cognitive Science Department</p>
-              <p class="location">La Jolla, CA</p>
-              <ul class="resume-bullets">
-                <li>Teaching assistant for COGS 101B under Prof. Allen</li>
-                <li>Organizes activities and responds to student inquiries</li>
-                <li>Leads discussion sections focusing on concept comprehension and information structuring</li>
-              </ul>
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>Pedagogy &amp; Learning Apprentice</h3>
+                <p class="org">UCSD — Cognitive Science Department</p>
+                <p class="location">La Jolla, CA</p>
+                <ul class="resume-bullets">
+                  <li>Teaching assistant for COGS 101B under Prof. Allen</li>
+                  <li>Organizes activities and responds to student inquiries</li>
+                  <li>Leads discussion sections focusing on concept comprehension and information structuring</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Apr 2026 — Present</span>
+              </div>
             </div>
-            <div class="resume-item-right">
-              <span class="date">Apr 2026 — Present</span>
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>UI/UX Designer Intern</h3>
+                <p class="org">Maroon Group Inc.</p>
+                <p class="location">Remote</p>
+                <ul class="resume-bullets">
+                  <li>Contributes to early-stage design exploration and product strategy</li>
+                  <li>Develops user flows, interface concepts, and design iterations</li>
+                  <li>Aligns design decisions with product and business requirements</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Apr 2026 — Present</span>
+              </div>
             </div>
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>UX Research Intern</h3>
+                <p class="org">Owaves</p>
+                <p class="location">Remote</p>
+                <ul class="resume-bullets">
+                  <li>Created user flows, wireframes, and Figma prototypes for early-stage products</li>
+                  <li>Synthesized research findings from 7 interviews with international students into an 8-page report</li>
+                  <li>Provided cross-cultural perspective on user interaction patterns</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Jan 2026 — Apr 2026</span>
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>Industry Analyst Intern</h3>
+                <p class="org">China Grand Prosperity Investment</p>
+                <p class="location">Beijing, China</p>
+                <ul class="resume-bullets">
+                  <li>Researched AI, IT, and renewable energy sectors analyzing market trends and competition</li>
+                  <li>Evaluated business models and financial performance for investment decisions</li>
+                  <li>Supported cross-border M&amp;A projects through target assessment</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Aug 2025 — Sep 2025</span>
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>Research Assistant &amp; Volunteer</h3>
+                <p class="org">Southwest University</p>
+                <p class="location">Chongqing, China</p>
+                <ul class="resume-bullets">
+                  <li>Participated in observational study involving over 200 children and adolescents</li>
+                  <li>Collected brain activity data using neuroimaging tools</li>
+                  <li>Conducted longitudinal tracking and behavioral observation</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Aug 2025 — Sep 2025</span>
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>Leader, Startup Client Development</h3>
+                <p class="org">Autism Innovation Lab</p>
+                <p class="location">Remote</p>
+                <ul class="resume-bullets">
+                  <li>Provided consulting on product positioning and market strategy</li>
+                  <li>Conducted competitive analysis for autism education startup using Figma</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Aug 2025 — Sep 2025</span>
+              </div>
+            </div>
+
           </div>
+        </details>
 
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>UI/UX Designer Intern</h3>
-              <p class="org">Maroon Group Inc.</p>
-              <p class="location">Remote</p>
-              <ul class="resume-bullets">
-                <li>Contributes to early-stage design exploration and product strategy</li>
-                <li>Develops user flows, interface concepts, and design iterations</li>
-                <li>Aligns design decisions with product and business requirements</li>
-              </ul>
+        <!-- Research & Applied Experience -->
+        <details class="accordion-section">
+          <summary>
+            <span class="accordion-title">Research &amp; Applied Experience</span>
+            <span class="accordion-toggle">+</span>
+          </summary>
+          <div class="accordion-body">
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>Behavioral Attention Analytics</h3>
+                <p class="org">UCSD Cognitive Science Student Association</p>
+                <ul class="resume-bullets">
+                  <li>Explores impact of cognitive load and attentional residue on focus and productivity</li>
+                  <li>Designs intervention system with prompts and feedback mechanisms</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Apr 2026 — Present</span>
+              </div>
             </div>
-            <div class="resume-item-right">
-              <span class="date">Apr 2026 — Present</span>
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>Xiushan Huadeng Research Project</h3>
+                <p class="org">China Thinks Big</p>
+                <ul class="resume-bullets">
+                  <li>Led team conducting field research with 1,000+ survey responses on Chongqing Xiushan Flower Lantern Art</li>
+                  <li>Authored 20,000-word paper supported by 30+ sources</li>
+                  <li>Developed promotional video, cultural products, and AR interactive experience</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Oct 2023 — Apr 2024</span>
+              </div>
             </div>
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>Intergenerational Care &amp; Elderly Well-being Research</h3>
+                <p class="org">China Thinks Big</p>
+                <ul class="resume-bullets">
+                  <li>Conducted mixed-methods research through literature review, street interviews, and surveys</li>
+                  <li>Designed intervention system including content platform, mini program, and interactive game</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Oct 2022 — Apr 2023</span>
+              </div>
+            </div>
+
           </div>
+        </details>
 
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>UX Research Intern</h3>
-              <p class="org">Owaves</p>
-              <p class="location">Remote</p>
-              <ul class="resume-bullets">
-                <li>Created user flows, wireframes, and Figma prototypes for early-stage products</li>
-                <li>Synthesized research findings from 7 interviews with international students into an 8-page report</li>
-                <li>Provided cross-cultural perspective on user interaction patterns</li>
-              </ul>
+        <!-- Competition -->
+        <details class="accordion-section">
+          <summary>
+            <span class="accordion-title">Competition</span>
+            <span class="accordion-toggle">+</span>
+          </summary>
+          <div class="accordion-body">
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>ESG Innovation Challenge</h3>
+                <p class="org">EY &amp; GaoDun</p>
+                <ul class="resume-bullets">
+                  <li>Food industry ESG strategy development with AI-driven solutions</li>
+                  <li>Delivered 4-minute video and 29-slide presentation</li>
+                  <li>Recognition: Top 10, international division</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Mar 2025 — May 2025</span>
+              </div>
             </div>
-            <div class="resume-item-right">
-              <span class="date">Jan 2026 — Apr 2026</span>
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>ESG Case Study Competition</h3>
+                <p class="org">KPMG</p>
+                <ul class="resume-bullets">
+                  <li>New energy sector analysis including supply chains and policy</li>
+                  <li>Energy storage company business model design</li>
+                  <li>Award: Global Top 100</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Sep 2024 — Oct 2024</span>
+              </div>
             </div>
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>China Thinks Big 2023–2024</h3>
+                <p class="org">National Competition</p>
+                <ul class="resume-bullets">
+                  <li>Awards: Top 5% Paper, National Gold Prize, Harvard Global Finals Finalist</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">2023 — 2024</span>
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>China Thinks Big 2022–2023</h3>
+                <p class="org">National Competition</p>
+                <ul class="resume-bullets">
+                  <li>72-hour rapid research project with English presentation</li>
+                  <li>Awards: Third Place Team Showcase/Hackathon, Top 5% Paper, Popularity Award</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">2022 — 2023</span>
+              </div>
+            </div>
+
           </div>
+        </details>
 
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>Industry Analyst Intern</h3>
-              <p class="org">China Grand Prosperity Investment</p>
-              <p class="location">Beijing, China</p>
-              <ul class="resume-bullets">
-                <li>Researched AI, IT, and renewable energy sectors analyzing market trends and competition</li>
-                <li>Evaluated business models and financial performance for investment decisions</li>
-                <li>Supported cross-border M&amp;A projects through target assessment</li>
-              </ul>
+        <!-- Extracurricular -->
+        <details class="accordion-section">
+          <summary>
+            <span class="accordion-title">Extracurricular</span>
+            <span class="accordion-toggle">+</span>
+          </summary>
+          <div class="accordion-body">
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>President</h3>
+                <p class="org">X-Factor Dance Team — UC San Diego</p>
+                <ul class="resume-bullets">
+                  <li>Organizes performances, workshops, and training sessions</li>
+                  <li>Performed in 10+ campus events</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Oct 2024 — Present</span>
+              </div>
             </div>
-            <div class="resume-item-right">
-              <span class="date">Aug 2025 — Sep 2025</span>
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>Operations VP</h3>
+                <p class="org">China Thinks Big (CTB)</p>
+                <ul class="resume-bullets">
+                  <li>Managed regional operations and mentored participants</li>
+                  <li>Organized 10+ workshops and sharing sessions</li>
+                  <li>Selected as national coaching forum speaker</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Jul 2023 — Jul 2024</span>
+              </div>
             </div>
+
+            <div class="resume-item">
+              <div class="resume-item-left">
+                <h3>Founder &amp; President</h3>
+                <p class="org">MED Dance Club — Chongqing Yucai High School</p>
+                <ul class="resume-bullets">
+                  <li>Led organization with 50+ members</li>
+                  <li>Coordinated cross-school collaborations and charity partnerships</li>
+                </ul>
+              </div>
+              <div class="resume-item-right">
+                <span class="date">Sep 2021 — Jun 2024</span>
+              </div>
+            </div>
+
           </div>
+        </details>
 
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>Research Assistant &amp; Volunteer</h3>
-              <p class="org">Southwest University</p>
-              <p class="location">Chongqing, China</p>
-              <ul class="resume-bullets">
-                <li>Participated in observational study involving over 200 children and adolescents</li>
-                <li>Collected brain activity data using neuroimaging tools</li>
-                <li>Conducted longitudinal tracking and behavioral observation</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">Aug 2025 — Sep 2025</span>
-            </div>
-          </div>
-
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>Leader, Startup Client Development</h3>
-              <p class="org">Autism Innovation Lab</p>
-              <p class="location">Remote</p>
-              <ul class="resume-bullets">
-                <li>Provided consulting on product positioning and market strategy</li>
-                <li>Conducted competitive analysis for autism education startup using Figma</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">Aug 2025 — Sep 2025</span>
-            </div>
-          </div>
-
-        </div>
-      </details>
-
-      <!-- Research & Applied Experience -->
-      <details class="accordion-section" open>
-        <summary>
-          <span class="accordion-title">Research &amp; Applied Experience</span>
-          <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </summary>
-        <div class="accordion-body">
-
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>Behavioral Attention Analytics</h3>
-              <p class="org">UCSD Cognitive Science Student Association</p>
-              <ul class="resume-bullets">
-                <li>Explores impact of cognitive load and attentional residue on focus and productivity</li>
-                <li>Designs intervention system with prompts and feedback mechanisms</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">Apr 2026 — Present</span>
-            </div>
-          </div>
-
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>Xiushan Huadeng Research Project</h3>
-              <p class="org">China Thinks Big</p>
-              <ul class="resume-bullets">
-                <li>Led team conducting field research with 1,000+ survey responses on Chongqing Xiushan Flower Lantern Art</li>
-                <li>Authored 20,000-word paper supported by 30+ sources</li>
-                <li>Developed promotional video, cultural products, and AR interactive experience</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">Oct 2023 — Apr 2024</span>
-            </div>
-          </div>
-
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>Intergenerational Care &amp; Elderly Well-being Research</h3>
-              <p class="org">China Thinks Big</p>
-              <ul class="resume-bullets">
-                <li>Conducted mixed-methods research through literature review, street interviews, and surveys</li>
-                <li>Designed intervention system including content platform, mini program, and interactive game</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">Oct 2022 — Apr 2023</span>
-            </div>
-          </div>
-
-        </div>
-      </details>
-
-      <!-- Competition -->
-      <details class="accordion-section" open>
-        <summary>
-          <span class="accordion-title">Competition</span>
-          <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </summary>
-        <div class="accordion-body">
-
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>ESG Innovation Challenge</h3>
-              <p class="org">EY &amp; GaoDun</p>
-              <ul class="resume-bullets">
-                <li>Food industry ESG strategy development with AI-driven solutions</li>
-                <li>Delivered 4-minute video and 29-slide presentation</li>
-                <li>Recognition: Top 10, international division</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">Mar 2025 — May 2025</span>
-            </div>
-          </div>
-
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>ESG Case Study Competition</h3>
-              <p class="org">KPMG</p>
-              <ul class="resume-bullets">
-                <li>New energy sector analysis including supply chains and policy</li>
-                <li>Energy storage company business model design</li>
-                <li>Award: Global Top 100</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">Sep 2024 — Oct 2024</span>
-            </div>
-          </div>
-
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>China Thinks Big 2023–2024</h3>
-              <p class="org">National Competition</p>
-              <ul class="resume-bullets">
-                <li>Awards: Top 5% Paper, National Gold Prize, Harvard Global Finals Finalist</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">2023 — 2024</span>
-            </div>
-          </div>
-
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>China Thinks Big 2022–2023</h3>
-              <p class="org">National Competition</p>
-              <ul class="resume-bullets">
-                <li>72-hour rapid research project with English presentation</li>
-                <li>Awards: Third Place Team Showcase/Hackathon, Top 5% Paper, Popularity Award</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">2022 — 2023</span>
-            </div>
-          </div>
-
-        </div>
-      </details>
-
-      <!-- Extracurricular -->
-      <details class="accordion-section" open>
-        <summary>
-          <span class="accordion-title">Extracurricular</span>
-          <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </summary>
-        <div class="accordion-body">
-
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>President</h3>
-              <p class="org">X-Factor Dance Team — UC San Diego</p>
-              <ul class="resume-bullets">
-                <li>Organizes performances, workshops, and training sessions</li>
-                <li>Performed in 10+ campus events</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">Oct 2024 — Present</span>
-            </div>
-          </div>
-
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>Operations VP</h3>
-              <p class="org">China Thinks Big (CTB)</p>
-              <ul class="resume-bullets">
-                <li>Managed regional operations and mentored participants</li>
-                <li>Organized 10+ workshops and sharing sessions</li>
-                <li>Selected as national coaching forum speaker</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">Jul 2023 — Jul 2024</span>
-            </div>
-          </div>
-
-          <div class="resume-item">
-            <div class="resume-item-left">
-              <h3>Founder &amp; President</h3>
-              <p class="org">MED Dance Club — Chongqing Yucai High School</p>
-              <ul class="resume-bullets">
-                <li>Led organization with 50+ members</li>
-                <li>Coordinated cross-school collaborations and charity partnerships</li>
-              </ul>
-            </div>
-            <div class="resume-item-right">
-              <span class="date">Sep 2021 — Jun 2024</span>
-            </div>
-          </div>
-
-        </div>
-      </details>
-
+      </div><!-- /.resume-right -->
     </div>
   </main>
 
@@ -388,6 +445,13 @@
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    document.querySelectorAll('.accordion-section').forEach(details => {
+      const btn = details.querySelector('.accordion-toggle');
+      details.addEventListener('toggle', () => {
+        btn.textContent = details.open ? '−' : '+';
+      });
+    });
   </script>
 
 </body>
