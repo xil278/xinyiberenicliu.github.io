@@ -46,7 +46,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 120px 24px 48px;
+      padding: 48px 24px;
     }
 
     body.fade-out {
@@ -113,16 +113,6 @@
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="nav-logo"><img src="Logo.png" alt="Xinyi Liu" style="height:80px;width:auto;display:block;" /></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="about.html">About</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
-  </nav>
-
   <main class="welcome-main">
     <div class="welcome-card">
       <h1>WELCOME</h1>
@@ -159,10 +149,6 @@
   </footer>
 
   <script>
-    const toggle = document.getElementById('navToggle');
-    const links = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
-
     document.getElementById('startBtn').addEventListener('click', function(e) {
       e.preventDefault();
       var dest = this.href;
