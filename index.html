@@ -3,142 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xinyi Liu — Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Xinyi Liu — Welcome</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
-    .about-hero {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 80px;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 100px 48px 80px;
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .about-text h1 {
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'PT Serif', Georgia, serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('background 3.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .welcome-card {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 64px 72px;
+      text-align: center;
+      max-width: 560px;
+      width: 90%;
+      box-shadow: 0 8px 48px rgba(0, 0, 0, 0.12);
+    }
+
+    .welcome-card h1 {
+      font-family: 'Libre Baskerville', Georgia, serif;
       font-size: 4rem;
-      font-weight: 400;
-      line-height: 1.15;
-      letter-spacing: -0.01em;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       color: #2C2416;
       margin-bottom: 24px;
     }
 
-    .about-text .tagline {
-      font-size: clamp(17px, 2vw, 21px);
-      font-weight: 400;
+    .welcome-card p {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 1.1rem;
       color: #4A3C2C;
-      line-height: 1.5;
-      margin-bottom: 32px;
+      line-height: 1.7;
+      margin-bottom: 40px;
     }
 
-    .about-text .bio {
-      font-size: 15px;
-      color: #6B5B47;
-      line-height: 1.8;
-      max-width: 500px;
-      margin-bottom: 20px;
-    }
-
-    .photo-label {
+    .start-btn {
+      display: inline-block;
       font-family: 'Bitter', Georgia, serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #A89880;
-      margin-bottom: 16px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #F5F0E8;
+      background: #2C2416;
+      padding: 14px 40px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
     }
 
-    @media (max-width: 900px) {
-      .about-hero {
-        grid-template-columns: 1fr;
-        padding: 60px 24px 40px;
-        gap: 48px;
-      }
-      .photo-card {
-        max-width: 320px;
-        margin: 0 auto;
-      }
+    .start-btn:hover {
+      background: #4A3C2C;
+      transform: translateY(-1px);
     }
 
     @media (max-width: 600px) {
-      .about-text h1 {
+      .welcome-card {
+        padding: 48px 32px;
+      }
+      .welcome-card h1 {
         font-size: 3rem;
       }
     }
   </style>
 </head>
 <body>
-
-  <nav>
-    <a href="index.html" class="nav-logo"><img src="Logo.png" alt="Xinyi Liu" style="height:80px;width:auto;display:block;" /></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" class="active">About</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
-  </nav>
-
-  <main class="page">
-    <section class="about-hero">
-      <div class="about-text">
-        <h1>Hi, this is Xinyi(Berenic) Liu</h1>
-        <p class="tagline">Designing Human-AI experiences for Creativity and Collaboration</p>
-        <p class="bio">
-          I'm an undergraduate student studying <strong>Cognitive Science (Spec. Design &amp; Interaction)</strong> in UC San Diego.
-        </p>
-        <p class="bio">
-          I'm interested in <strong>AI, design, and human-computer interaction</strong>. I want to explore how people interact with AI systems not just as tools, but as partners in ideation, decision-making, and production. I am curious about how people can better understand, collaborate with, and critically use AI in everyday creative and design contexts.
-        </p>
-      </div>
-
-      <div class="photo-card">
-        <p class="photo-label">About me</p>
-        <div class="photo-placeholder">
-          <img src="About me.JPG" alt="Xinyi Liu" />
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <p class="footer-col-name">Xinyi(Berenic) Liu</p>
-        <p class="footer-col-sub">Exploring Design, HCI, AI, and Human Behavior</p>
-      </div>
-      <div>
-        <p class="footer-col-label">Location</p>
-        <p class="footer-col-value">9450 Gilman Dr, La Jolla<br/>CA, United States</p>
-      </div>
-      <div>
-        <p class="footer-col-label">Contact</p>
-        <p class="footer-col-value">
-          <a href="mailto:xinyi0765@gmail.com">xinyi0765@gmail.com</a><br/>
-          <a href="mailto:xil278@ucsd.edu">xil278@ucsd.edu</a><br/>
-          858-402-6254
-        </p>
-      </div>
-      <div>
-        <p class="footer-col-label">Connect</p>
-        <p class="footer-col-value">
-          <a href="https://www.linkedin.com/in/xinyi-liu-228059387" target="_blank" rel="noopener">www.linkedin.com/in/xinyi-liu-228059387</a>
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const toggle = document.getElementById('navToggle');
-    const links = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
-  </script>
-
+  <div class="welcome-card">
+    <h1>WELCOME</h1>
+    <p>I study and learn design, HCI, and AI. Happy to see you here!</p>
+    <a href="about.html" class="start-btn">Start Now</a>
+  </div>
 </body>
 </html>
