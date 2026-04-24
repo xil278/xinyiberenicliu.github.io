@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Xinyi Liu — Welcome</title>
+  <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
@@ -32,13 +33,20 @@
       font-family: 'PT Serif', Georgia, serif;
       min-height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
       background-image: url('background 3.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       animation: fadeIn 0.6s ease both;
+    }
+
+    .welcome-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 48px;
     }
 
     body.fade-out {
@@ -104,12 +112,57 @@
   </style>
 </head>
 <body>
-  <div class="welcome-card">
-    <h1>WELCOME</h1>
-    <p>I study and learn design, HCI, and AI. Happy to see you here!</p>
-    <a href="about.html" class="start-btn" id="startBtn">Start Now</a>
-  </div>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="Logo.png" alt="Xinyi Liu" style="height:80px;width:auto;display:block;" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
+  </nav>
+
+  <main class="welcome-main">
+    <div class="welcome-card">
+      <h1>WELCOME</h1>
+      <p>I study and learn design, HCI, and AI. Happy to see you here!</p>
+      <a href="about.html" class="start-btn" id="startBtn">Start Now</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-col-name">Xinyi(Berenic) Liu</p>
+        <p class="footer-col-sub">Exploring Design, HCI, AI, and Human Behavior</p>
+      </div>
+      <div>
+        <p class="footer-col-label">Location</p>
+        <p class="footer-col-value">9450 Gilman Dr, La Jolla<br/>CA, United States</p>
+      </div>
+      <div>
+        <p class="footer-col-label">Contact</p>
+        <p class="footer-col-value">
+          <a href="mailto:xinyi0765@gmail.com">xinyi0765@gmail.com</a><br/>
+          <a href="mailto:xil278@ucsd.edu">xil278@ucsd.edu</a><br/>
+          858-402-6254
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-label">Connect</p>
+        <p class="footer-col-value">
+          <a href="https://www.linkedin.com/in/xinyi-liu-228059387" target="_blank" rel="noopener">www.linkedin.com/in/xinyi-liu-228059387</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
   <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+
     document.getElementById('startBtn').addEventListener('click', function(e) {
       e.preventDefault();
       var dest = this.href;
@@ -117,5 +170,6 @@
       setTimeout(function() { window.location.href = dest; }, 600);
     });
   </script>
+
 </body>
 </html>
