@@ -236,6 +236,126 @@
       }
     }
 
+    /* ── Survey Findings ── */
+    .survey-findings {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px 100px;
+    }
+
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .chart-card {
+      background: #EDE8DE;
+      border: 1px solid #DDD5C5;
+      border-radius: 16px;
+      padding: 32px 28px;
+    }
+
+    .chart-card-title {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #A89880;
+      margin-bottom: 24px;
+    }
+
+    .chart-body {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .chart-body svg {
+      flex-shrink: 0;
+    }
+
+    .chart-legend {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .legend-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .legend-label {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 13px;
+      color: #6B5B47;
+      flex: 1;
+      line-height: 1.3;
+    }
+
+    .legend-pct {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #2C2416;
+    }
+
+    .chart-insight {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding-top: 48px;
+      border-top: 1px solid #DDD5C5;
+    }
+
+    .chart-insight-line {
+      flex: 1;
+      height: 1px;
+      background: #DDD5C5;
+    }
+
+    .chart-insight-text {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: 700;
+      font-style: italic;
+      color: #2C2416;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 900px) {
+      .survey-findings {
+        padding: 0 24px 80px;
+      }
+
+      .charts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .chart-insight {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .chart-insight-line {
+        width: 60px;
+        height: 1px;
+      }
+    }
+
     /* ── Problem Section ── */
     .problem-section {
       max-width: 1100px;
@@ -410,6 +530,102 @@
         </div>
       </div>
     </section>
+
+    <div class="survey-findings">
+      <div class="charts-grid">
+
+        <!-- Chart 1: Public Awareness -->
+        <div class="chart-card">
+          <p class="chart-card-title">Public Awareness of Xiushan Flower Lantern</p>
+          <div class="chart-body">
+            <svg width="130" height="130" viewBox="0 0 200 200" aria-hidden="true">
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#F0EBE1" stroke-width="30"/>
+              <!-- 完全不了解 52% → 228.71 of 439.82 -->
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#C4A882" stroke-width="30"
+                stroke-dasharray="228.71 439.82" stroke-dashoffset="109.96" stroke-linecap="butt"/>
+              <!-- 听说过 31% → 136.34 -->
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#B9A590" stroke-width="30"
+                stroke-dasharray="136.34 439.82" stroke-dashoffset="-118.75" stroke-linecap="butt"/>
+              <!-- 比较了解 13% → 57.18 -->
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#8a7060" stroke-width="30"
+                stroke-dasharray="57.18 439.82" stroke-dashoffset="-255.09" stroke-linecap="butt"/>
+              <!-- 非常了解 4% → 17.59 -->
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#d4c4b0" stroke-width="30"
+                stroke-dasharray="17.59 439.82" stroke-dashoffset="-312.27" stroke-linecap="butt"/>
+              <text x="100" y="94" text-anchor="middle" font-family="Libre Baskerville, Georgia, serif" font-size="26" font-weight="700" fill="#2C2416">52%</text>
+              <text x="100" y="114" text-anchor="middle" font-family="PT Serif, Georgia, serif" font-size="12" fill="#A89880">unaware</text>
+            </svg>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <span class="legend-dot" style="background:#C4A882"></span>
+                <span class="legend-label">完全不了解</span>
+                <span class="legend-pct">52%</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background:#B9A590"></span>
+                <span class="legend-label">听说过</span>
+                <span class="legend-pct">31%</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background:#8a7060"></span>
+                <span class="legend-label">比较了解</span>
+                <span class="legend-pct">13%</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background:#d4c4b0"></span>
+                <span class="legend-label">非常了解</span>
+                <span class="legend-pct">4%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart 2: Willingness -->
+        <div class="chart-card">
+          <p class="chart-card-title">Willingness to Participate in Lantern-Making</p>
+          <div class="chart-body">
+            <svg width="130" height="130" viewBox="0 0 200 200" aria-hidden="true">
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#F0EBE1" stroke-width="30"/>
+              <!-- 愿意 78% → 343.06 -->
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#C4A882" stroke-width="30"
+                stroke-dasharray="343.06 439.82" stroke-dashoffset="109.96" stroke-linecap="butt"/>
+              <!-- 不确定 15% → 65.97 -->
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#B9A590" stroke-width="30"
+                stroke-dasharray="65.97 439.82" stroke-dashoffset="-233.10" stroke-linecap="butt"/>
+              <!-- 不愿意 7% → 30.79 -->
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#8a7060" stroke-width="30"
+                stroke-dasharray="30.79 439.82" stroke-dashoffset="-299.07" stroke-linecap="butt"/>
+              <text x="100" y="94" text-anchor="middle" font-family="Libre Baskerville, Georgia, serif" font-size="26" font-weight="700" fill="#2C2416">78%</text>
+              <text x="100" y="114" text-anchor="middle" font-family="PT Serif, Georgia, serif" font-size="12" fill="#A89880">willing</text>
+            </svg>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <span class="legend-dot" style="background:#C4A882"></span>
+                <span class="legend-label">愿意</span>
+                <span class="legend-pct">78%</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background:#B9A590"></span>
+                <span class="legend-label">不确定</span>
+                <span class="legend-pct">15%</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background:#8a7060"></span>
+                <span class="legend-label">不愿意</span>
+                <span class="legend-pct">7%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="chart-insight">
+        <div class="chart-insight-line"></div>
+        <p class="chart-insight-text">The core issue is not disappearance — it's disconnection.</p>
+        <div class="chart-insight-line"></div>
+      </div>
+    </div>
 
   </main>
 
