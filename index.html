@@ -7,118 +7,412 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
-      height: 100%;
-    }
-
-    @keyframes fadeIn {
+    @keyframes pageFadeIn {
       from { opacity: 0; }
       to   { opacity: 1; }
     }
 
-    @keyframes fadeOut {
-      from { opacity: 1; }
-      to   { opacity: 0; }
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'PT Serif', Georgia, serif;
-      min-height: 100vh;
+      opacity: 0;
+      animation: pageFadeIn 0.6s ease forwards;
+      background-color: #F6F3EC;
+    }
+
+    /* ── Hero ── */
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      min-height: 560px;
       display: flex;
       flex-direction: column;
-      background-image: url('background 3.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      animation: fadeIn 0.6s ease both;
-    }
-
-    .welcome-main {
-      min-height: 100vh;
-      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 48px 24px;
+      background-color: #F6F3EC;
+      overflow: hidden;
     }
 
-    body.fade-out {
-      animation: fadeOut 0.6s ease forwards;
+    /* Floating bubbles */
+    @keyframes float1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(30px, -40px) scale(1.05); }
+      66%       { transform: translate(-20px, 20px) scale(0.97); }
+    }
+    @keyframes float2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      40%       { transform: translate(-35px, 30px) scale(1.08); }
+      75%       { transform: translate(20px, -25px) scale(0.95); }
+    }
+    @keyframes float3 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50%       { transform: translate(25px, 35px) scale(1.06); }
     }
 
-    .welcome-card {
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 24px;
-      padding: 64px 72px;
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .bubble-1 {
+      width: 340px; height: 340px;
+      background: #C4A882;
+      opacity: 0.17;
+      top: -100px; left: -80px;
+      animation: float1 10s ease-in-out infinite;
+    }
+    .bubble-2 {
+      width: 220px; height: 220px;
+      background: #8a7060;
+      opacity: 0.14;
+      top: 8%; right: 4%;
+      animation: float2 13s ease-in-out infinite;
+    }
+    .bubble-3 {
+      width: 280px; height: 280px;
+      background: #C4A882;
+      opacity: 0.15;
+      bottom: 2%; left: 12%;
+      animation: float3 11s ease-in-out infinite;
+    }
+    .bubble-4 {
+      width: 160px; height: 160px;
+      background: #A89880;
+      opacity: 0.18;
+      bottom: 18%; right: 6%;
+      animation: float1 15s ease-in-out infinite reverse;
+    }
+    .bubble-5 {
+      width: 110px; height: 110px;
+      background: #4A3C2C;
+      opacity: 0.08;
+      top: 38%; left: 4%;
+      animation: float2 9s ease-in-out infinite;
+    }
+    .bubble-6 {
+      width: 90px; height: 90px;
+      background: #C4A882;
+      opacity: 0.12;
+      top: 22%; right: 22%;
+      animation: float3 8s ease-in-out infinite 2s;
+    }
+    .bubble-7 {
+      width: 60px; height: 60px;
+      background: #8a7060;
+      opacity: 0.13;
+      top: 60%; left: 38%;
+      animation: float1 12s ease-in-out infinite 4s;
+    }
+
+    /* Hero text */
+    .hero-content {
+      position: relative;
+      z-index: 1;
       text-align: center;
-      max-width: 560px;
-      width: 90%;
-      box-shadow: 0 8px 48px rgba(0, 0, 0, 0.12);
+      padding: 0 32px;
+      max-width: 720px;
     }
 
-    .welcome-card h1 {
+    .hero-content h1 {
       font-family: 'Libre Baskerville', Georgia, serif;
-      font-size: 2.4rem;
+      font-size: clamp(2rem, 5vw, 3.6rem);
       font-weight: 700;
-      letter-spacing: 0.04em;
+      color: #2C2416;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .hero-content p {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: clamp(16px, 2vw, 20px);
+      color: #4A3C2C;
+      line-height: 1.65;
+    }
+
+    /* Scroll down indicator */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(7px); }
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 1;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .scroll-down-label {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #A89880;
+    }
+
+    .scroll-down-arrow {
+      color: #A89880;
+      font-size: 22px;
+      line-height: 1;
+      animation: bounce 1.8s ease-in-out infinite;
+    }
+
+    /* ── About section ── */
+    .about-hero {
+      background: rgba(240, 235, 225, 0.96);
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 80px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 48px 80px;
+    }
+
+    .about-text h1 {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
       color: #2C2416;
       margin-bottom: 24px;
     }
 
-    .welcome-card p {
+    .about-text .tagline {
       font-family: 'PT Serif', Georgia, serif;
-      font-size: 1.1rem;
+      font-size: clamp(17px, 2vw, 21px);
+      font-weight: 400;
+      color: #4A3C2C;
+      line-height: 1.5;
+      margin-bottom: 32px;
+    }
+
+    .about-text .bio {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
       color: #2C2416;
-      line-height: 1.7;
-      margin-bottom: 40px;
+      line-height: 1.8;
+      max-width: 500px;
+      margin-bottom: 20px;
     }
 
-    .start-btn {
-      display: inline-block;
+    .photo-label {
       font-family: 'Bitter', Georgia, serif;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      color: #F5F0E8;
-      background: #2C2416;
-      padding: 14px 40px;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #A89880;
+      margin-bottom: 16px;
     }
 
-    .start-btn:hover {
+    /* ── Hero Statement ── */
+    @keyframes drawCircle {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .hero-statement {
+      background: #ECE4DA;
+      padding: 120px 48px;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(2.2rem, 4.8vw, 3.4rem);
+      font-weight: 700;
+      color: #000000;
+      line-height: 1.3;
+      margin-bottom: 48px;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .impact-wrap {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .impact-circle {
+      position: absolute;
+      top: -0.22em;
+      left: -0.35em;
+      width: calc(100% + 0.7em);
+      height: calc(100% + 0.44em);
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .impact-circle path {
+      stroke-dasharray: 620;
+      stroke-dashoffset: 620;
+    }
+
+    .hero-statement.in-view .impact-circle path {
+      animation: drawCircle 1.3s ease-in-out forwards;
+    }
+
+    .hero-subtitle {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: clamp(15px, 1.9vw, 19px);
+      color: #2C2416;
+      line-height: 1.75;
+      max-width: 680px;
+      margin: 0 auto 48px;
+    }
+
+    /* ── Nav Buttons ── */
+    .about-nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .about-nav-btn {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #2C2416;
+      background: #EDE8DE;
+      border: 0.8px solid #2C2416;
+      border-radius: 12px;
+      padding: 13px 32px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .about-nav-btn:hover {
       background: #2C2416;
-      transform: translateY(-1px);
+      color: #F5F0E8;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-statement {
+        padding: 80px 24px;
+      }
+      .about-hero {
+        grid-template-columns: 1fr;
+        padding: 60px 24px 40px;
+        gap: 48px;
+      }
+      .photo-card {
+        max-width: 320px;
+        margin: 0 auto;
+      }
     }
 
     @media (max-width: 600px) {
-      .welcome-card {
-        padding: 48px 32px;
-      }
-      .welcome-card h1 {
+      .about-text h1 {
         font-size: 3rem;
+      }
+      .about-nav-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .about-nav-btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <main class="welcome-main">
-    <div class="welcome-card">
-      <h1>Welcome to Berenic's Website</h1>
-      <p>I study and learn design, HCI, and AI. Happy to see you here!</p>
-      <a href="about.html" class="start-btn" id="startBtn">Start Now</a>
-    </div>
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="Logo.png" alt="Xinyi Liu" style="height:80px;width:auto;display:block;" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="project.html">Project</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
+  </nav>
+
+  <main class="page">
+
+    <!-- First screen: Hero -->
+    <section class="hero-section">
+      <div class="bubble bubble-1"></div>
+      <div class="bubble bubble-2"></div>
+      <div class="bubble bubble-3"></div>
+      <div class="bubble bubble-4"></div>
+      <div class="bubble bubble-5"></div>
+      <div class="bubble bubble-6"></div>
+      <div class="bubble bubble-7"></div>
+
+      <div class="hero-content">
+        <h1>Welcome to Berenic's Website</h1>
+        <p>I study and learn design, HCI, and AI. Happy to see you here!</p>
+      </div>
+
+      <a class="scroll-down" href="#aboutSection">
+        <span class="scroll-down-label">Scroll Down</span>
+        <span class="scroll-down-arrow">↓</span>
+      </a>
+    </section>
+
+    <!-- About content -->
+    <section class="about-hero" id="aboutSection">
+      <div class="about-text">
+        <h1>Hi, this is Xinyi(Berenic) Liu</h1>
+        <p class="tagline">Designing Human-AI experiences for Creativity and Collaboration</p>
+        <p class="bio">
+          I'm an undergraduate student studying <strong>Cognitive Science (Spec. Design &amp; Interaction)</strong> in UC San Diego.
+        </p>
+        <p class="bio">
+          I'm interested in <strong>AI, design, and human-computer interaction</strong>. I want to explore how people interact with AI systems not just as tools, but as partners in ideation, decision-making, and production. I am curious about how people can better understand, collaborate with, and critically use AI in everyday creative and design contexts.
+        </p>
+      </div>
+
+      <div class="photo-card">
+        <p class="photo-label">About me</p>
+        <div class="photo-placeholder">
+          <img src="About me.JPG" alt="Xinyi Liu" />
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-statement" id="heroStatement">
+      <h2 class="hero-title">
+        Let's Make an
+        <span class="impact-wrap">Impact
+          <svg class="impact-circle" viewBox="0 0 210 82" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16,41 C13,19 50,3 105,5 C160,7 197,21 195,41 C193,63 157,79 105,77 C53,75 9,63 16,41"
+                  stroke="#000000" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>
+        For This World
+      </h2>
+      <p class="hero-subtitle">I believe design can change how we see the world — and I want to create experiences that actually matter</p>
+      <div class="about-nav-buttons">
+        <a href="resume.html" class="about-nav-btn">Resume</a>
+        <a href="project.html" class="about-nav-btn">Project</a>
+        <a href="contact.html" class="about-nav-btn">Contact Me</a>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -149,12 +443,20 @@
   </footer>
 
   <script>
-    document.getElementById('startBtn').addEventListener('click', function(e) {
-      e.preventDefault();
-      var dest = this.href;
-      document.body.classList.add('fade-out');
-      setTimeout(function() { window.location.href = dest; }, 600);
-    });
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    const heroStatement = document.getElementById('heroStatement');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          heroStatement.classList.add('in-view');
+          observer.unobserve(heroStatement);
+        }
+      });
+    }, { threshold: 0.2 });
+    observer.observe(heroStatement);
   </script>
 
 </body>
