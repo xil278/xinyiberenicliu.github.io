@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Behavioral Attention Analytics — Xinyi Liu</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    @keyframes pageFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    body {
+      opacity: 0;
+      animation: pageFadeIn 0.6s ease forwards;
+      background-color: #F0EBE1;
+    }
+
+    /* ── Hero Section ── */
+    .project-hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 140px 48px 100px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* Left column */
+    .hero-tag {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #A89880;
+      margin-bottom: 28px;
+    }
+
+    .hero-heading {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 700;
+      color: #2C2416;
+      line-height: 1.15;
+      margin-bottom: 28px;
+    }
+
+    .hero-heading .accent {
+      color: #B9A590;
+    }
+
+    .hero-subtitle {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: clamp(16px, 1.8vw, 19px);
+      color: #4A3C2C;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      max-width: 520px;
+    }
+
+    .hero-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #6B5B47;
+      line-height: 1.85;
+      max-width: 520px;
+    }
+
+    /* Right column — status card */
+    .status-card {
+      background: #EDE8DE;
+      border: 1px solid #DDD5C5;
+      border-radius: 16px;
+      padding: 32px 28px;
+      position: sticky;
+      top: 120px;
+    }
+
+    .status-card-label {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #A89880;
+      margin-bottom: 14px;
+    }
+
+    .status-card-main {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 17px;
+      color: #2C2416;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .status-card-main em {
+      color: #B9A590;
+      font-style: italic;
+    }
+
+    .status-card-note {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 13px;
+      color: #8C7B6A;
+      line-height: 1.7;
+      border-top: 1px solid #DDD5C5;
+      padding-top: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .project-hero {
+        grid-template-columns: 1fr;
+        padding: 120px 24px 60px;
+        gap: 48px;
+      }
+
+      .status-card {
+        position: static;
+        max-width: 480px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="about.html" class="nav-logo"><img src="Logo.png" alt="Xinyi Liu" style="height:80px;width:auto;display:block;" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="project.html" class="active">Project</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
+  </nav>
+
+  <main class="page">
+    <section class="project-hero">
+
+      <!-- Left: Title Area -->
+      <div class="hero-left">
+        <p class="hero-tag">Work in Progress · Concept Exploration</p>
+        <h1 class="hero-heading">Designing for <span class="accent">Attention</span></h1>
+        <p class="hero-subtitle">Understanding and supporting focus in digitally distracting environments.</p>
+        <p class="hero-body">An early-stage exploration into how digital behavior can be read as a quiet signal of cognitive state — and how design can respond with care, not control.</p>
+      </div>
+
+      <!-- Right: Status Card -->
+      <div class="hero-right">
+        <div class="status-card">
+          <p class="status-card-label">Status</p>
+          <p class="status-card-main">Currently <em>in exploration.</em></p>
+          <p class="status-card-note">Research and concept sketches in progress. Full case study coming soon.</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-col-name">Xinyi(Berenic) Liu</p>
+        <p class="footer-col-sub">Exploring Design, HCI, AI, and Human Behavior</p>
+      </div>
+      <div>
+        <p class="footer-col-label">Location</p>
+        <p class="footer-col-value">9450 Gilman Dr, La Jolla<br/>CA, United States</p>
+      </div>
+      <div>
+        <p class="footer-col-label">Contact</p>
+        <p class="footer-col-value">
+          <a href="mailto:xinyi0765@gmail.com">xinyi0765@gmail.com</a><br/>
+          <a href="mailto:xil278@ucsd.edu">xil278@ucsd.edu</a><br/>
+          858-402-6254
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-label">Connect</p>
+        <p class="footer-col-value">
+          <a href="https://www.linkedin.com/in/xinyi-liu-228059387" target="_blank" rel="noopener">www.linkedin.com/in/xinyi-liu-228059387</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+  </script>
+
+</body>
+</html>
