@@ -31,7 +31,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: #1a2e0a; /* fallback while image loads */
+      background-color: #1a1410; /* fallback while image loads */
       z-index: 0;
     }
 
@@ -39,17 +39,17 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(30, 55, 10, 0.35);
+      background: rgba(18, 12, 6, 0.28);
     }
 
     /* Nav matches about.html style */
     nav {
       position: fixed;
       z-index: 100;
-      background: rgba(234, 242, 227, 0.96);
+      background: rgba(240, 235, 225, 0.96);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid #7fa86a;
+      border-bottom: 1px solid #DDD5C5;
     }
 
     /* Main layout */
@@ -79,7 +79,7 @@
     .project-list li:not(:last-child)::after {
       content: ' •';
       font-family: 'Libre Baskerville', Georgia, serif;
-      color: rgba(101, 127, 73, 0.6);
+      color: rgba(245, 239, 228, 0.55);
       font-size: 0.6em;
       vertical-align: middle;
     }
@@ -89,7 +89,7 @@
       font-size: clamp(28px, 3.2vw, 40px);
       font-weight: 400;
       font-style: italic;
-      color: #eaf5e0;
+      color: #F5EFE4;
       text-decoration: none;
       letter-spacing: -0.01em;
       line-height: 2.3;
@@ -107,8 +107,8 @@
     footer {
       position: relative;
       z-index: 1;
-      background: rgba(30, 55, 10, 0.75);
-      border-top: 1px solid rgba(199, 228, 123, 0.2);
+      background: rgba(18, 12, 6, 0.72);
+      border-top: 1px solid rgba(255, 245, 230, 0.1);
     }
 
     .footer-col-name,
@@ -116,11 +116,11 @@
     .footer-col-label,
     .footer-col-value,
     .footer-col-value a {
-      color: rgba(240, 255, 208, 0.8);
+      color: rgba(245, 239, 228, 0.65);
     }
 
     .footer-col-value a:hover {
-      color: #eaf5e0;
+      color: #F5EFE4;
     }
 
     @media (max-width: 900px) {
