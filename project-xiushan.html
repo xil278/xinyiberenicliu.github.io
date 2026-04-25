@@ -726,6 +726,47 @@
       }
     }
 
+    /* ── Overview Section ── */
+    .overview-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      border-top: 1px solid #DDD5C5;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .overview-label {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #A89880;
+      padding-top: 6px;
+    }
+
+    .overview-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .overview-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #6B5B47;
+      line-height: 1.85;
+    }
+
+    .overview-body strong {
+      color: #2C2416;
+      font-weight: 700;
+    }
+
     /* ── Problem Section ── */
     .problem-section {
       max-width: 1100px;
@@ -783,6 +824,17 @@
 
       .gallery-grid {
         grid-template-columns: 1fr;
+      }
+
+      .overview-section {
+        grid-template-columns: 1fr;
+        padding: 60px 24px;
+        gap: 24px;
+      }
+
+      .overview-right {
+        grid-template-columns: 1fr;
+        gap: 24px;
       }
 
       .problem-section {
@@ -867,6 +919,13 @@
           <img src="Deity-Sending%20Ceremony.png" alt="Deity-Sending Ceremony" />
           <p class="gallery-caption">辞灯仪式 / Farewell Lantern Ceremony</p>
         </div>
+      </div>
+    </section>
+
+    <section class="overview-section">
+      <p class="overview-label">Overview</p>
+      <div class="overview-right">
+        <p class="overview-body">This was a student research project conducted over one year, exploring how digital tools can revitalize intangible cultural heritage. Working with a small interdisciplinary team, we documented field rituals, interviewed inheritors, and designed interactive experiences grounded in ethnographic research. The project received the <strong>Editor's Choice — Top 5%</strong> award.</p>
       </div>
     </section>
 
