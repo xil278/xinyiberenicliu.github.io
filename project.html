@@ -215,28 +215,10 @@
       padding: 4px 12px;
     }
 
-    .card-back-link {
-      font-family: 'Bitter', Georgia, serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #2C2416;
+    /* ── Wrapper as link ── */
+    a.card-wrapper {
+      display: block;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      border-bottom: 1.5px solid #C4A882;
-      padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
-      position: relative;
-      z-index: 10;
-      pointer-events: auto;
-    }
-
-    .card-back-link:hover {
-      color: #C4A882;
-      border-color: transparent;
     }
 
     /* ── Responsive ── */
@@ -286,7 +268,7 @@
       <div class="cards-grid">
 
         <!-- Card 1: Behavioral Attention Analytics -->
-        <div class="card-wrapper" data-href="project-behavioral.html">
+        <a class="card-wrapper" href="project-behavioral.html">
           <div class="card-inner">
             <div class="card-front">
               <span class="card-badge">📁 Research</span>
@@ -305,14 +287,13 @@
                   <span class="card-pill">Cognitive Science</span>
                   <span class="card-pill">HCI</span>
                 </div>
-                <a href="project-behavioral.html" class="card-back-link">View Project →</a>
               </div>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Card 2: Xiushan Flower Lantern -->
-        <div class="card-wrapper" data-href="project-xiushan.html">
+        <a class="card-wrapper" href="project-xiushan.html">
           <div class="card-inner">
             <div class="card-front">
               <span class="card-badge">📁 Research</span>
@@ -331,14 +312,13 @@
                   <span class="card-pill">Design Research</span>
                   <span class="card-pill">AR</span>
                 </div>
-                <a href="project-xiushan.html" class="card-back-link">View Project →</a>
               </div>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Card 3: Intergenerational Care -->
-        <div class="card-wrapper" data-href="project-elderly.html">
+        <a class="card-wrapper" href="project-elderly.html">
           <div class="card-inner">
             <div class="card-front">
               <span class="card-badge">📁 Research</span>
@@ -357,11 +337,10 @@
                   <span class="card-pill">UX Design</span>
                   <span class="card-pill">Community Care</span>
                 </div>
-                <a href="project-elderly.html" class="card-back-link">View Project →</a>
               </div>
             </div>
           </div>
-        </div>
+        </a>
 
       </div>
     </div>
@@ -399,18 +378,6 @@
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
 
-    // Touch/click flip for mobile
-    document.querySelectorAll('.card-wrapper').forEach(card => {
-      card.addEventListener('click', function (e) {
-        if (e.target.closest('.card-back-link')) return; // let link navigate
-        if (window.innerWidth <= 900) {
-          if (!this.classList.contains('flipped')) {
-            e.preventDefault();
-            this.classList.add('flipped');
-          }
-        }
-      });
-    });
   </script>
 
 </body>
