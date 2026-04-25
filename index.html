@@ -447,30 +447,11 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script>
     // Nav toggle
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
-
-    // Lenis smooth scroll
-    const lenis = new Lenis({
-      duration: 0.8,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-      smoothWheel: true,
-    });
-
-    (function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    })(0);
-
-    // Anchor link uses Lenis instead of native jump
-    document.querySelector('.scroll-down').addEventListener('click', e => {
-      e.preventDefault();
-      lenis.scrollTo('#aboutSection', { offset: 0 });
-    });
 
     // Reveal on scroll + impact circle trigger
     const revealObserver = new IntersectionObserver((entries) => {
