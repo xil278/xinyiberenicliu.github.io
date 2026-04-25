@@ -511,6 +511,59 @@
 
     }
 
+    /* ── Product Gallery Section ── */
+    .product-gallery-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px 100px;
+      border-top: 1px solid #DDD5C5;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .product-gallery-label {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #A89880;
+      padding-top: 6px;
+    }
+
+    .product-gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .product-gallery-grid img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .product-gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 900px) {
+      .product-gallery-section {
+        grid-template-columns: 1fr;
+        padding: 60px 24px 80px;
+        gap: 24px;
+      }
+
+      .product-gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
     /* ── Problem Section ── */
     .problem-section {
       max-width: 1100px;
@@ -879,6 +932,19 @@
 
         </div>
         <p class="outcome-body">Across every platform and space we brought the lantern into, people wanted to know more.</p>
+      </div>
+    </section>
+
+    <section class="product-gallery-section">
+      <p class="product-gallery-label">Cultural Products</p>
+      <div class="product-gallery-grid">
+        <img src="poduct%20design%20male.JPG" alt="Product design male" />
+        <img src="product%20design%20female.JPG" alt="Product design female" />
+        <img src="postcard%20design%20sketch%201.JPG" alt="Postcard design sketch 1" />
+        <img src="postcard%20design%20sketch%202.JPG" alt="Postcard design sketch 2" />
+        <img src="cultural%20and%20creative%20product%201.JPG" alt="Cultural and creative product 1" />
+        <img src="cultural%20and%20creative%20product%202.PNG" alt="Cultural and creative product 2" />
+        <img src="cultural%20and%20creative%20product%203.JPG" alt="Cultural and creative product 3" />
       </div>
     </section>
 
