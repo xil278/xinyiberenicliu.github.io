@@ -229,6 +229,48 @@
     }
 
     /* Responsive */
+    /* ── What's Next Section ── */
+    .next-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px 120px;
+      border-top: 1px solid #DDD5C5;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .next-label {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #A89880;
+      padding-top: 6px;
+    }
+
+    .next-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 16px;
+      color: #6B5B47;
+      line-height: 1.85;
+    }
+
+    .next-body em {
+      color: #B9A590;
+      font-style: italic;
+    }
+
+    @media (max-width: 900px) {
+      .next-section {
+        grid-template-columns: 1fr;
+        padding: 60px 24px 80px;
+        gap: 24px;
+      }
+    }
+
     @media (max-width: 900px) {
       .exploring-section {
         grid-template-columns: 1fr;
@@ -325,6 +367,11 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="next-section">
+      <p class="next-label">What's Next</p>
+      <p class="next-body">Still early. I'm sketching, reading, and figuring out what this actually wants to be. <em>More soon.</em></p>
     </section>
 
   </main>
