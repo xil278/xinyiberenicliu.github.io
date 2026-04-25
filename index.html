@@ -162,13 +162,22 @@
       background: transparent;
       position: relative;
       z-index: 1;
+      padding: 60px 48px;
+    }
+
+    .about-inner {
       display: grid;
       grid-template-columns: 1fr 380px;
       gap: 80px;
       align-items: center;
       max-width: 1100px;
       margin: 0 auto;
-      padding: 100px 48px 80px;
+      padding: 60px 48px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 24px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 32px rgba(44, 36, 22, 0.08);
     }
 
     .about-text h1 {
@@ -661,9 +670,12 @@
         padding: 80px 24px;
       }
       .about-hero {
+        padding: 24px;
+      }
+      .about-inner {
         grid-template-columns: 1fr;
-        padding: 60px 24px 40px;
-        gap: 48px;
+        padding: 40px 24px;
+        gap: 40px;
       }
       .photo-card {
         max-width: 320px;
@@ -750,6 +762,7 @@
 
     <!-- About content -->
     <section class="about-hero reveal" id="aboutSection">
+      <div class="about-inner">
       <div class="about-text">
         <h1>Hi, this is Xinyi(Berenic) Liu</h1>
         <p class="tagline">Designing Human-AI experiences for Creativity and Collaboration</p>
@@ -767,6 +780,7 @@
           <img src="About me.JPG" alt="Xinyi Liu" />
         </div>
       </div>
+      </div><!-- end .about-inner -->
     </section>
 
     <section class="hero-statement reveal" id="heroStatement">
