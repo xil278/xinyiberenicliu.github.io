@@ -158,8 +158,84 @@
       max-width: 580px;
     }
 
+    /* ── Exploring Section ── */
+    .exploring-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      border-top: 1px solid #DDD5C5;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .exploring-left {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #A89880;
+      padding-top: 6px;
+    }
+
+    .exploring-left h2 {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      font-weight: 400;
+      color: #2C2416;
+      line-height: 1.35;
+      margin-top: 16px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .exploring-items {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .exploring-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .exploring-num {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #B9A590;
+      letter-spacing: 0.08em;
+      padding-top: 4px;
+    }
+
+    .exploring-item-title {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2C2416;
+      margin-bottom: 10px;
+    }
+
+    .exploring-item-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #6B5B47;
+      line-height: 1.85;
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
+      .exploring-section {
+        grid-template-columns: 1fr;
+        padding: 60px 24px;
+        gap: 32px;
+      }
+
       .premise-section {
         grid-template-columns: 1fr;
         padding: 60px 24px;
@@ -218,6 +294,36 @@
       <div class="premise-right">
         <h2>Screen time tells you <em>how long.</em><br>Attention design asks <em>how well.</em></h2>
         <p>Most digital wellbeing tools count minutes. This project is exploring a different lens — one that reads the shape of behavior, not just its duration.</p>
+      </div>
+    </section>
+
+    <section class="exploring-section">
+      <div class="exploring-left">
+        What I'm Exploring
+        <h2>Three things we keep coming back to.</h2>
+      </div>
+      <div class="exploring-items">
+        <div class="exploring-item">
+          <span class="exploring-num">01</span>
+          <div>
+            <p class="exploring-item-title">Behavioral Signals</p>
+            <p class="exploring-item-body">The small things you do on your phone — switching apps, pausing, typing fast then slow — might say something about how your mind is doing.</p>
+          </div>
+        </div>
+        <div class="exploring-item">
+          <span class="exploring-num">02</span>
+          <div>
+            <p class="exploring-item-title">Cognitive Translation</p>
+            <p class="exploring-item-body">How do you turn those patterns into something meaningful? Something that feels like "you seem scattered right now" rather than raw data.</p>
+          </div>
+        </div>
+        <div class="exploring-item">
+          <span class="exploring-num">03</span>
+          <div>
+            <p class="exploring-item-title">Gentle Feedback</p>
+            <p class="exploring-item-body">Whatever the system surfaces, it shouldn't interrupt you. The goal is to support focus, not add noise or distraction.</p>
+          </div>
+        </div>
       </div>
     </section>
 
