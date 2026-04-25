@@ -346,6 +346,86 @@
       }
     }
 
+    /* ── Solution Section ── */
+    .solution-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      border-top: 1px solid #DDD5C5;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .solution-left-label {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #A89880;
+      margin-bottom: 16px;
+    }
+
+    .solution-left-subtitle {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-weight: 400;
+      color: #2C2416;
+      line-height: 1.4;
+    }
+
+    .solution-items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .solution-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 28px 0;
+      border-top: 1px solid #DDD5C5;
+    }
+
+    .solution-item:last-child {
+      border-bottom: 1px solid #DDD5C5;
+    }
+
+    .solution-num {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #C4A882;
+      letter-spacing: 0.08em;
+      padding-top: 3px;
+    }
+
+    .solution-item-title {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2C2416;
+      margin-bottom: 8px;
+    }
+
+    .solution-item-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #6B5B47;
+      line-height: 1.85;
+    }
+
+    @media (max-width: 900px) {
+      .solution-section {
+        grid-template-columns: 1fr;
+        padding: 60px 24px;
+        gap: 32px;
+      }
+    }
+
     /* ── Problem Section ── */
     .problem-section {
       max-width: 1100px;
@@ -472,6 +552,50 @@
         <div class="gallery-item">
           <img src="Deity-Sending%20Ceremony.png" alt="Deity-Sending Ceremony" />
           <p class="gallery-caption">辞灯仪式 / Farewell Lantern Ceremony</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution-section">
+      <div class="solution-left">
+        <p class="solution-left-label">What We Built</p>
+        <p class="solution-left-subtitle">Five ways to close the gap.</p>
+      </div>
+      <div class="solution-items">
+        <div class="solution-item">
+          <span class="solution-num">01</span>
+          <div>
+            <p class="solution-item-title">Digital Storytelling</p>
+            <p class="solution-item-body">A public account introducing the history, meaning, and artistry of Xiushan Flower Lantern — one post at a time.</p>
+          </div>
+        </div>
+        <div class="solution-item">
+          <span class="solution-num">02</span>
+          <div>
+            <p class="solution-item-title">Promotional Video</p>
+            <p class="solution-item-body">A mixed-reality film combining real footage and virtual environments to tell the story of the lantern's origin and craft.</p>
+          </div>
+        </div>
+        <div class="solution-item">
+          <span class="solution-num">03</span>
+          <div>
+            <p class="solution-item-title">Cultural Products</p>
+            <p class="solution-item-body">Tote bags, stickers, and decorative items designed around the visual language of the flower lantern — bringing tradition into everyday life.</p>
+          </div>
+        </div>
+        <div class="solution-item">
+          <span class="solution-num">04</span>
+          <div>
+            <p class="solution-item-title">Exhibitions &amp; Workshops</p>
+            <p class="solution-item-body">Offline events in schools and public spaces where people could make lanterns and watch performances themselves.</p>
+          </div>
+        </div>
+        <div class="solution-item">
+          <span class="solution-num">05</span>
+          <div>
+            <p class="solution-item-title">AR Mini Program</p>
+            <p class="solution-item-body">A step-by-step AR guide that lets users learn and build a flower lantern through their phone — making craftsmanship interactive and accessible.</p>
+          </div>
         </div>
       </div>
     </section>
