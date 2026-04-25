@@ -185,6 +185,35 @@
       flex-shrink: 0;
     }
 
+    .projects-cta {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .projects-cta-btn {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8a6f5e;
+      background: transparent;
+      border: 1.5px solid #C4B9A8;
+      border-radius: 100px;
+      padding: 12px 28px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .projects-cta-btn:hover {
+      background: #2C2416;
+      color: #F5F0E8;
+      border-color: #2C2416;
+    }
+
     .date {
       font-family: 'Bitter', Georgia, serif;
       font-size: 11px;
@@ -564,6 +593,10 @@
       </div><!-- /.resume-right -->
     </div>
   </main>
+
+  <div class="projects-cta">
+    <a href="project.html" class="projects-cta-btn">View My Projects →</a>
+  </div>
 
   <footer>
     <div class="footer-grid">
