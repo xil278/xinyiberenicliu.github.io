@@ -229,6 +229,9 @@
       border-bottom: 1.5px solid #C4A882;
       padding-bottom: 2px;
       transition: color 0.2s, border-color 0.2s;
+      position: relative;
+      z-index: 10;
+      pointer-events: auto;
     }
 
     .card-back-link:hover {
@@ -399,6 +402,7 @@
     // Touch/click flip for mobile
     document.querySelectorAll('.card-wrapper').forEach(card => {
       card.addEventListener('click', function (e) {
+        if (e.target.closest('.card-back-link')) return; // let link navigate
         if (window.innerWidth <= 900) {
           if (!this.classList.contains('flipped')) {
             e.preventDefault();
