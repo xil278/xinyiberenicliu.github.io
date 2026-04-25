@@ -597,10 +597,19 @@
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
 
-    document.querySelectorAll('.accordion-section').forEach(details => {
-      const btn = details.querySelector('.accordion-toggle');
+    const allSections = document.querySelectorAll('.accordion-section');
+
+    allSections.forEach(details => {
       details.addEventListener('toggle', () => {
-        btn.textContent = details.open ? '−' : '+';
+        details.querySelector('.accordion-toggle').textContent = details.open ? '−' : '+';
+        if (details.open) {
+          allSections.forEach(other => {
+            if (other !== details && other.open) {
+              other.removeAttribute('open');
+              other.querySelector('.accordion-toggle').textContent = '+';
+            }
+          });
+        }
       });
     });
   </script>
