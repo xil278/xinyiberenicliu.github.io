@@ -134,19 +134,10 @@
       margin-bottom: 40px;
     }
 
-    .gallery-row {
+    .gallery-grid {
       display: grid;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-
-    .gallery-row-top {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .gallery-row-bottom {
       grid-template-columns: 1fr 1fr;
-      margin-bottom: 0;
+      gap: 24px;
     }
 
     .gallery-item img {
@@ -171,8 +162,7 @@
         padding: 60px 24px 80px;
       }
 
-      .gallery-row-top,
-      .gallery-row-bottom {
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -231,8 +221,7 @@
     <section class="gallery-section">
       <p class="gallery-label">Visual Archive</p>
 
-      <!-- Top row: 3 images -->
-      <div class="gallery-row gallery-row-top">
+      <div class="gallery-grid">
         <div class="gallery-item">
           <img src="Xiushan%20Elevated%20Lantern%20Performance%20%28Gaotai%20Huadeng%29.png" alt="Xiushan Elevated Lantern Performance" />
           <p class="gallery-caption">高台花灯 / Gaotai Flower Lantern</p>
@@ -245,10 +234,6 @@
           <img src="Deity-Inviting%20Ceremony.png" alt="Deity-Inviting Ceremony" />
           <p class="gallery-caption">请神仪式 / Inviting the Spirits</p>
         </div>
-      </div>
-
-      <!-- Bottom row: 2 images -->
-      <div class="gallery-row gallery-row-bottom">
         <div class="gallery-item">
           <img src="Deity-Sending%20Ceremony.png" alt="Deity-Sending Ceremony" />
           <p class="gallery-caption">辞灯仪式 / Farewell Lantern Ceremony</p>
