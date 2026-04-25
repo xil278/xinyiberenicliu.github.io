@@ -533,23 +533,115 @@
       padding-top: 6px;
     }
 
-    .product-gallery-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 16px;
+    .carousel-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .product-gallery-grid img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+    .carousel-track-outer {
+      flex: 1;
+      height: 400px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      cursor: grab;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .carousel-track-outer::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-track-outer.dragging {
+      cursor: grabbing;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 16px;
+      height: 100%;
+    }
+
+    .carousel-img {
+      height: 100%;
+      width: auto;
+      flex-shrink: 0;
       border-radius: 8px;
+      object-fit: cover;
       display: block;
       transition: transform 0.3s ease;
+      user-select: none;
+      pointer-events: auto;
     }
 
-    .product-gallery-grid img:hover {
+    .carousel-img:hover {
       transform: scale(1.03);
+    }
+
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid #C4A882;
+      background: #F0EBE1;
+      color: #C4A882;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .carousel-btn:hover {
+      background: #C4A882;
+      color: #F5F0E8;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 14, 8, 0.88);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 28px;
+      right: 36px;
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 28px;
+      color: #d4c4b0;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+      background: none;
+      border: none;
+    }
+
+    .lightbox-close:hover {
+      opacity: 1;
     }
 
     @media (max-width: 900px) {
@@ -559,8 +651,8 @@
         gap: 24px;
       }
 
-      .product-gallery-grid {
-        grid-template-columns: 1fr 1fr;
+      .carousel-track-outer {
+        height: 260px;
       }
     }
 
@@ -937,16 +1029,28 @@
 
     <section class="product-gallery-section">
       <p class="product-gallery-label">Cultural Products</p>
-      <div class="product-gallery-grid">
-        <img src="poduct%20design%20male.JPG" alt="Product design male" />
-        <img src="product%20design%20female.JPG" alt="Product design female" />
-        <img src="postcard%20design%20sketch%201.JPG" alt="Postcard design sketch 1" />
-        <img src="postcard%20design%20sketch%202.JPG" alt="Postcard design sketch 2" />
-        <img src="cultural%20and%20creative%20product%201.JPG" alt="Cultural and creative product 1" />
-        <img src="cultural%20and%20creative%20product%202.PNG" alt="Cultural and creative product 2" />
-        <img src="cultural%20and%20creative%20product%203.JPG" alt="Cultural and creative product 3" />
+      <div class="carousel-wrapper">
+        <button class="carousel-btn carousel-btn-left" aria-label="Previous">&#8592;</button>
+        <div class="carousel-track-outer" id="carouselTrack">
+          <div class="carousel-track">
+            <img src="poduct%20design%20male.JPG" class="carousel-img" alt="Product design male" />
+            <img src="product%20design%20female.JPG" class="carousel-img" alt="Product design female" />
+            <img src="postcard%20design%20sketch%201.JPG" class="carousel-img" alt="Postcard design sketch 1" />
+            <img src="postcard%20design%20sketch%202.JPG" class="carousel-img" alt="Postcard design sketch 2" />
+            <img src="cultural%20and%20creative%20product%201.JPG" class="carousel-img" alt="Cultural product 1" />
+            <img src="cultural%20and%20creative%20product%202.PNG" class="carousel-img" alt="Cultural product 2" />
+            <img src="cultural%20and%20creative%20product%203.JPG" class="carousel-img" alt="Cultural product 3" />
+          </div>
+        </div>
+        <button class="carousel-btn carousel-btn-right" aria-label="Next">&#8594;</button>
       </div>
     </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+    </div>
 
   </main>
 
@@ -981,6 +1085,53 @@
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    // ── Carousel ──
+    const trackOuter = document.getElementById('carouselTrack');
+    const btnLeft = document.querySelector('.carousel-btn-left');
+    const btnRight = document.querySelector('.carousel-btn-right');
+
+    btnLeft.addEventListener('click', () => {
+      trackOuter.scrollBy({ left: -420, behavior: 'smooth' });
+    });
+    btnRight.addEventListener('click', () => {
+      trackOuter.scrollBy({ left: 420, behavior: 'smooth' });
+    });
+
+    // Mouse drag
+    let isDragging = false, dragStartX = 0, dragScrollLeft = 0;
+    trackOuter.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      dragStartX = e.pageX;
+      dragScrollLeft = trackOuter.scrollLeft;
+      trackOuter.classList.add('dragging');
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      trackOuter.scrollLeft = dragScrollLeft - (e.pageX - dragStartX);
+    });
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+      trackOuter.classList.remove('dragging');
+    });
+
+    // ── Lightbox ──
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.carousel-img').forEach(img => {
+      img.addEventListener('dblclick', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+      });
+    });
+
+    function closeLightbox() { lightbox.classList.remove('active'); }
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
   </script>
 
 </body>
