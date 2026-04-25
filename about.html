@@ -65,10 +65,13 @@
     }
 
     /* ── Hero Statement ── */
+    @keyframes drawCircle {
+      to { stroke-dashoffset: 0; }
+    }
+
     .hero-statement {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 80px 48px 56px;
+      background: #ECE4DA;
+      padding: 120px 48px;
       text-align: center;
     }
 
@@ -77,8 +80,11 @@
       font-size: clamp(2.2rem, 4.8vw, 3.4rem);
       font-weight: 700;
       color: #2C2416;
-      line-height: 1.22;
-      margin-bottom: 28px;
+      line-height: 1.3;
+      margin-bottom: 48px;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .impact-wrap {
@@ -97,13 +103,22 @@
       overflow: visible;
     }
 
+    .impact-circle path {
+      stroke-dasharray: 620;
+      stroke-dashoffset: 620;
+    }
+
+    .hero-statement.in-view .impact-circle path {
+      animation: drawCircle 1.3s ease-in-out forwards;
+    }
+
     .hero-subtitle {
       font-family: 'PT Serif', Georgia, serif;
       font-size: clamp(15px, 1.9vw, 19px);
       color: #6B5B47;
       line-height: 1.75;
       max-width: 680px;
-      margin: 0 auto;
+      margin: 0 auto 48px;
     }
 
     /* ── Nav Buttons ── */
@@ -112,9 +127,7 @@
       justify-content: center;
       gap: 16px;
       flex-wrap: wrap;
-      padding: 8px 48px 80px;
-      max-width: 1100px;
-      margin: 0 auto;
+      margin-top: 0;
     }
 
     .about-nav-btn {
@@ -139,7 +152,7 @@
 
     @media (max-width: 900px) {
       .hero-statement {
-        padding: 60px 24px 40px;
+        padding: 80px 24px;
       }
       .about-hero {
         grid-template-columns: 1fr;
@@ -149,9 +162,6 @@
       .photo-card {
         max-width: 320px;
         margin: 0 auto;
-      }
-      .about-nav-buttons {
-        padding: 8px 24px 60px;
       }
     }
 
@@ -206,7 +216,7 @@
       </div>
     </section>
 
-    <section class="hero-statement">
+    <section class="hero-statement" id="heroStatement">
       <h2 class="hero-title">
         Let's Make an
         <span class="impact-wrap">Impact
@@ -218,13 +228,12 @@
         For This World
       </h2>
       <p class="hero-subtitle">I believe design can change how we see the world — and I want to create experiences that actually matter</p>
+      <div class="about-nav-buttons">
+        <a href="resume.html" class="about-nav-btn">Resume</a>
+        <a href="project.html" class="about-nav-btn">Project</a>
+        <a href="contact.html" class="about-nav-btn">Contact Me</a>
+      </div>
     </section>
-
-    <div class="about-nav-buttons">
-      <a href="resume.html" class="about-nav-btn">Resume</a>
-      <a href="project.html" class="about-nav-btn">Project</a>
-      <a href="contact.html" class="about-nav-btn">Contact Me</a>
-    </div>
 
   </main>
 
@@ -259,6 +268,17 @@
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    const hero = document.getElementById('heroStatement');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          hero.classList.add('in-view');
+          observer.unobserve(hero);
+        }
+      });
+    }, { threshold: 0.2 });
+    observer.observe(hero);
   </script>
 
 </body>
