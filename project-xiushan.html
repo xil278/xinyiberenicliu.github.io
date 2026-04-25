@@ -156,6 +156,86 @@
       line-height: 1.5;
     }
 
+    /* ── Research Section ── */
+    .research-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      border-top: 1px solid #DDD5C5;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .research-left-label {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #A89880;
+      margin-bottom: 16px;
+    }
+
+    .research-left-subtitle {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-weight: 400;
+      color: #2C2416;
+      line-height: 1.4;
+    }
+
+    .research-items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .research-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 28px 0;
+      border-top: 1px solid #DDD5C5;
+    }
+
+    .research-item:last-child {
+      border-bottom: 1px solid #DDD5C5;
+    }
+
+    .research-num {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #C4A882;
+      letter-spacing: 0.08em;
+      padding-top: 3px;
+    }
+
+    .research-item-title {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2C2416;
+      margin-bottom: 8px;
+    }
+
+    .research-item-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 15px;
+      color: #6B5B47;
+      line-height: 1.85;
+    }
+
+    @media (max-width: 900px) {
+      .research-section {
+        grid-template-columns: 1fr;
+        padding: 60px 24px;
+        gap: 32px;
+      }
+    }
+
     /* ── Problem Section ── */
     .problem-section {
       max-width: 1100px;
@@ -282,6 +362,43 @@
         <div class="gallery-item">
           <img src="Deity-Sending%20Ceremony.png" alt="Deity-Sending Ceremony" />
           <p class="gallery-caption">辞灯仪式 / Farewell Lantern Ceremony</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section">
+      <div class="research-left">
+        <p class="research-left-label">Research</p>
+        <p class="research-left-subtitle">What we found on the ground.</p>
+      </div>
+      <div class="research-items">
+        <div class="research-item">
+          <span class="research-num">01</span>
+          <div>
+            <p class="research-item-title">Literature Review</p>
+            <p class="research-item-body">Reviewed academic sources on intangible cultural heritage, folk art preservation, and the history of Xiushan Flower Lantern.</p>
+          </div>
+        </div>
+        <div class="research-item">
+          <span class="research-num">02</span>
+          <div>
+            <p class="research-item-title">Field Visits</p>
+            <p class="research-item-body">Visited Xiushan in person — museums, cultural sites, and live performances — to understand the tradition in its actual context.</p>
+          </div>
+        </div>
+        <div class="research-item">
+          <span class="research-num">03</span>
+          <div>
+            <p class="research-item-title">Interviews</p>
+            <p class="research-item-body">Spoke with local inheritors and practitioners to learn about the challenges they face and what the tradition means to them.</p>
+          </div>
+        </div>
+        <div class="research-item">
+          <span class="research-num">04</span>
+          <div>
+            <p class="research-item-title">Survey</p>
+            <p class="research-item-body">Collected responses from over 1,000 participants to measure public awareness and interest.</p>
+          </div>
         </div>
       </div>
     </section>
