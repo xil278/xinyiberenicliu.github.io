@@ -14,7 +14,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #657f49;
-  background-color: #c7e47b;
+  background-color: #eaf2e3;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,9 +42,9 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(199, 228, 123, 0.96);
+  background: rgba(234, 242, 227, 0.96);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid #8eb148;
+  border-bottom: 1px solid #7fa86a;
   padding: 0 40px;
   height: 100px;
   overflow: visible;
@@ -167,8 +167,8 @@ nav {
 
 .chip {
   font-family: 'Bitter', Georgia, serif;
-  background: #ffffaf;
-  border: 1px solid #8eb148;
+  background: #d6e8cc;
+  border: 1px solid #7fa86a;
   border-radius: 100px;
   padding: 6px 16px;
   font-size: 13px;
@@ -189,7 +189,7 @@ nav {
   gap: 6px;
   font-size: 14px;
   color: #657f49;
-  border-bottom: 1px solid #adc96a;
+  border-bottom: 1px solid #9dbf88;
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
@@ -207,23 +207,23 @@ nav {
 .photo-placeholder {
   width: 100%;
   aspect-ratio: 3/4;
-  background: #ffffaf;
+  background: #d6e8cc;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #8eb148;
+  color: #7fa86a;
   font-size: 13px;
   gap: 12px;
   overflow: hidden;
-  border: 1px solid #8eb148;
+  border: 1px solid #7fa86a;
 }
 
 .photo-placeholder svg {
   width: 48px;
   height: 48px;
-  stroke: #adc96a;
+  stroke: #9dbf88;
 }
 
 .photo-placeholder img {
@@ -239,7 +239,7 @@ nav {
   bottom: -16px;
   right: -16px;
   background: #657f49;
-  color: #f0ffd0;
+  color: #eaf5e0;
   font-size: 12px;
   font-weight: 500;
   padding: 10px 18px;
@@ -252,7 +252,7 @@ nav {
   max-width: 1100px;
   margin: 0 auto;
   padding: 60px 48px;
-  border-top: 1px solid #8eb148;
+  border-top: 1px solid #7fa86a;
 }
 
 .section-label {
@@ -261,7 +261,7 @@ nav {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #8eb148;
+  color: #7fa86a;
   margin-bottom: 24px;
 }
 
@@ -273,8 +273,8 @@ nav {
 
 .interest-card {
   padding: 24px;
-  background: #ffffaf;
-  border: 1px solid #8eb148;
+  background: #d6e8cc;
+  border: 1px solid #7fa86a;
   border-radius: 12px;
 }
 
@@ -321,7 +321,7 @@ nav {
 .resume-header .contact-line {
   font-family: 'Bitter', Georgia, serif;
   font-size: 13px;
-  color: #8eb148;
+  color: #7fa86a;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -345,7 +345,7 @@ nav {
   margin-top: 20px;
   padding: 10px 22px;
   background: #657f49;
-  color: #f0ffd0;
+  color: #eaf5e0;
   border-radius: 8px;
   font-size: 13px;
   font-weight: 500;
@@ -353,17 +353,17 @@ nav {
 }
 
 .resume-download:hover {
-  background: #8eb148;
+  background: #7fa86a;
 }
 
 /* ===== Accordion ===== */
 .accordion-section {
-  border-bottom: 1px solid #8eb148;
+  border-bottom: 1px solid #7fa86a;
   margin-bottom: 0;
 }
 
 .accordion-section:first-of-type {
-  border-top: 1px solid #8eb148;
+  border-top: 1px solid #7fa86a;
 }
 
 .accordion-section summary {
@@ -435,7 +435,7 @@ nav {
 .resume-item-left .location {
   font-family: 'PT Serif', Georgia, serif;
   font-size: 1rem;
-  color: #8eb148;
+  color: #7fa86a;
   margin-bottom: 10px;
 }
 
@@ -447,7 +447,7 @@ nav {
 .resume-item-right .date {
   font-family: 'PT Serif', Georgia, serif;
   font-size: 1rem;
-  color: #8eb148;
+  color: #7fa86a;
 }
 
 .resume-bullets {
@@ -469,7 +469,7 @@ nav {
   content: '—';
   position: absolute;
   left: 0;
-  color: #adc96a;
+  color: #9dbf88;
   font-size: 12px;
   top: 3px;
 }
@@ -523,7 +523,7 @@ nav {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #8eb148;
+  color: #7fa86a;
   margin-bottom: 12px;
 }
 
@@ -535,7 +535,7 @@ nav {
 
 .contact-info-group a {
   color: #657f49;
-  border-bottom: 1px solid #adc96a;
+  border-bottom: 1px solid #9dbf88;
   padding-bottom: 1px;
   transition: border-color 0.2s;
 }
@@ -545,20 +545,20 @@ nav {
 }
 
 .contact-photo-card {
-  background: #ffffaf;
+  background: #d6e8cc;
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid #8eb148;
+  border: 1px solid #7fa86a;
 }
 
 .contact-photo {
   aspect-ratio: 1/1;
-  background: #d4e88a;
+  background: #c8debb;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #8eb148;
+  color: #7fa86a;
   font-size: 13px;
   gap: 10px;
   overflow: hidden;
@@ -567,7 +567,7 @@ nav {
 .contact-photo svg {
   width: 40px;
   height: 40px;
-  stroke: #adc96a;
+  stroke: #9dbf88;
 }
 
 .contact-photo img {
@@ -618,7 +618,7 @@ nav {
 .social-link .icon {
   width: 36px;
   height: 36px;
-  background: #8eb148;
+  background: #7fa86a;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -654,8 +654,8 @@ nav {
   font-family: 'PT Serif', Georgia, serif;
   font-size: 15px;
   color: #657f49;
-  background: #ffffaf;
-  border: 1px solid #8eb148;
+  background: #d6e8cc;
+  border: 1px solid #7fa86a;
   border-radius: 8px;
   padding: 12px 16px;
   width: 100%;
@@ -665,13 +665,13 @@ nav {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #8eb148;
+  color: #7fa86a;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #657f49;
-  background: #c7e47b;
+  background: #eaf2e3;
 }
 
 .contact-form textarea {
@@ -684,7 +684,7 @@ nav {
   align-self: flex-start;
   padding: 12px 28px;
   background: #657f49;
-  color: #f0ffd0;
+  color: #eaf5e0;
   border: none;
   border-radius: 8px;
   font-size: 14px;
@@ -695,13 +695,13 @@ nav {
 }
 
 .form-submit:hover {
-  background: #8eb148;
+  background: #7fa86a;
 }
 
 /* ===== Footer ===== */
 footer {
   background: #657f49;
-  color: #f0ffd0;
+  color: #eaf5e0;
   padding: 56px 48px;
 }
 
@@ -717,14 +717,14 @@ footer {
   font-family: 'Libre Baskerville', Georgia, serif;
   font-size: 17px;
   font-weight: 700;
-  color: #f0ffd0;
+  color: #eaf5e0;
   margin-bottom: 8px;
 }
 
 .footer-col-sub {
   font-family: 'PT Serif', Georgia, serif;
   font-size: 13px;
-  color: #adc96a;
+  color: #9dbf88;
   line-height: 1.6;
 }
 
@@ -741,18 +741,18 @@ footer {
 .footer-col-value {
   font-family: 'PT Serif', Georgia, serif;
   font-size: 13px;
-  color: #adc96a;
+  color: #9dbf88;
   line-height: 1.8;
 }
 
 .footer-col-value a {
-  color: #adc96a;
+  color: #9dbf88;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .footer-col-value a:hover {
-  color: #f0ffd0;
+  color: #eaf5e0;
 }
 
 @media (max-width: 900px) {
@@ -831,8 +831,8 @@ footer {
     top: 64px;
     left: 0;
     right: 0;
-    background: #c7e47b;
-    border-bottom: 1px solid #8eb148;
+    background: #eaf2e3;
+    border-bottom: 1px solid #7fa86a;
     padding: 24px;
     gap: 20px;
   }
