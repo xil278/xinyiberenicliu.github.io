@@ -483,7 +483,7 @@
     }
 
     .card-text-wrap {
-      transition: opacity 0.4s ease;
+      transition: opacity 0.5s ease;
     }
 
     .design-module-cards .method-card:hover .card-text-wrap {
@@ -494,10 +494,19 @@
       position: absolute;
       inset: 0;
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.5s ease;
       border-radius: 14px;
       z-index: 1;
       background: #EDE8DE;
+    }
+
+    .module-hover-overlay::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(210, 190, 170, 0.3);
+      border-radius: 14px;
+      pointer-events: none;
     }
 
     .module-hover-overlay img {
@@ -507,6 +516,11 @@
       object-position: center top;
       border-radius: 14px;
       display: block;
+    }
+
+    [data-img="Social%20Layer.png"] .module-hover-overlay img {
+      transform: translateY(-20px);
+      height: calc(100% + 20px);
     }
 
     .design-module-cards .method-card:hover .module-hover-overlay {
