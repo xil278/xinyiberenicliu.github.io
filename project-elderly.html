@@ -224,6 +224,18 @@
       margin-bottom: 6px;
     }
 
+    .method-stat .method-card-num {
+      font-size: clamp(3rem, 5vw, 4rem);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .method-stat .method-card-title {
+      font-size: 11px;
+      color: #2C2416;
+      margin-bottom: 14px;
+    }
+
     /* ── Findings numbered list ── */
     .findings-section {
       padding: 72px 0;
@@ -610,14 +622,14 @@
         </div>
         <div>
           <p class="section-body">A mixed-method approach combining systematic literature review with in-depth field interviews — grounding insights in both academic evidence and the texture of real lives.</p>
-          <div class="method-cards">
+          <div class="method-cards method-stat">
             <div class="method-card">
-              <p class="method-card-num">12</p>
+              <p class="method-card-num method-count">12</p>
               <p class="method-card-title">Literature Review</p>
               <p class="method-card-body">Academic sources spanning sociology, gerontology, and public health — mapping the structural forces behind skip-generation caregiving.</p>
             </div>
             <div class="method-card">
-              <p class="method-card-num">39</p>
+              <p class="method-card-num method-count">39</p>
               <p class="method-card-title">Field Interviews</p>
               <p class="method-card-body">Elderly caregivers and young parents in Chongqing — conversations about daily routines, emotional states, family tensions, and sense of self.</p>
             </div>
@@ -824,6 +836,40 @@
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+    // Method count-up animation
+    (function () {
+      const countEls = document.querySelectorAll('.method-count');
+      if (!countEls.length) return;
+
+      function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+      function animateCount(el, target) {
+        const start = performance.now();
+        function tick(now) {
+          const t = Math.min((now - start) / 1500, 1);
+          el.textContent = Math.round(easeOut(t) * target);
+          if (t < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const methodGrid = document.querySelector('.method-stat');
+      if (!methodGrid) return;
+
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          countEls.forEach(el => {
+            const target = parseInt(el.textContent.trim(), 10);
+            el.textContent = '0';
+            animateCount(el, target);
+          });
+          observer.unobserve(methodGrid);
+        }
+      }, { threshold: 0.4 });
+
+      observer.observe(methodGrid);
+    })();
   </script>
 
 </body>
