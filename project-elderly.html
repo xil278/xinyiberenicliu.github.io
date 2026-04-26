@@ -411,6 +411,53 @@
       line-height: 1.85;
     }
 
+    /* ── Focus Cards ── */
+    .focus-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .focus-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: #EDE8DE;
+      border: 1px solid #DDD5C5;
+      border-radius: 14px;
+      padding: 20px 22px;
+    }
+
+    .focus-card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #F6F3EC;
+      border: 1px solid #DDD5C5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .focus-card-title {
+      font-family: 'Bitter', Georgia, serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #2C2416;
+      margin-bottom: 5px;
+    }
+
+    .focus-card-body {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 14px;
+      color: #6B5B47;
+      line-height: 1.7;
+    }
+
     /* ── Back link ── */
     .back-row {
       padding: 0 48px 80px;
@@ -511,13 +558,47 @@
           <p class="research-left-label">Focus</p>
           <p class="research-left-subtitle">What this research explores</p>
         </div>
-        <div class="section-body">
-          <p>This research centers on the elderly as the often-invisible backbone of urban family life — examining how the caregiving role reshapes their lives across three dimensions.</p>
-          <ul class="focus-list">
-            <li>How caregiving reshapes elderly bodies and health</li>
-            <li>How it influences mental states and emotional well-being</li>
-            <li>How family dynamics and generational gaps create tension</li>
-          </ul>
+        <div>
+          <p class="section-body">This research centers on the elderly as the often-invisible backbone of urban family life — examining how the caregiving role reshapes their lives across three dimensions.</p>
+          <div class="focus-cards">
+            <div class="focus-card">
+              <div class="focus-card-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C4A882" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="6" r="3"/>
+                  <path d="M8 20v-5a4 4 0 018 0v5"/>
+                </svg>
+              </div>
+              <div>
+                <p class="focus-card-title">Physical Health</p>
+                <p class="focus-card-body">How caregiving reshapes elderly bodies and health — sustained physical labor, repetitive strain, and the long-term toll on aging bodies.</p>
+              </div>
+            </div>
+            <div class="focus-card">
+              <div class="focus-card-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C4A882" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2C7.03 2 3 6.03 3 11c0 3.1 1.5 5.8 3.8 7.5V21h10.4v-2.5C19.5 16.8 21 14.1 21 11c0-4.97-4.03-9-9-9z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="focus-card-title">Mental Well-being</p>
+                <p class="focus-card-body">How caregiving influences mental states and emotional well-being — the coexistence of fulfillment, stress, fatigue, and loss of personal time.</p>
+              </div>
+            </div>
+            <div class="focus-card">
+              <div class="focus-card-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#C4A882" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="7" r="3"/>
+                  <path d="M5 20v-2a4 4 0 014-4h2"/>
+                  <circle cx="17" cy="7" r="3"/>
+                  <path d="M19 20v-2a4 4 0 00-4-4h-2"/>
+                </svg>
+              </div>
+              <div>
+                <p class="focus-card-title">Family Tension</p>
+                <p class="focus-card-body">How family dynamics and generational gaps create tension — conflicting parenting beliefs, communication breakdowns, and invisible emotional friction.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
