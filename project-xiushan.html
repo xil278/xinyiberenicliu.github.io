@@ -312,6 +312,14 @@
       color: #2C2416;
     }
 
+    @keyframes donut-fill {
+      from { stroke-dasharray: 0 439.82; }
+      to   { stroke-dasharray: var(--dash) 439.82; }
+    }
+    .donut-segment.is-animating {
+      animation: donut-fill 1.5s ease-out forwards;
+    }
+
     .chart-insight {
       padding-top: 28px;
     }
@@ -999,13 +1007,13 @@
                 <div class="chart-body">
                   <svg width="130" height="130" viewBox="0 0 200 200" aria-hidden="true">
                     <circle cx="100" cy="100" r="70" fill="none" stroke="#F0EBE1" stroke-width="30"/>
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#C4A882" stroke-width="30"
+                    <circle class="donut-segment" cx="100" cy="100" r="70" fill="none" stroke="#C4A882" stroke-width="30"
                       stroke-dasharray="228.71 439.82" stroke-dashoffset="109.96" stroke-linecap="butt"/>
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#B9A590" stroke-width="30"
+                    <circle class="donut-segment" cx="100" cy="100" r="70" fill="none" stroke="#B9A590" stroke-width="30"
                       stroke-dasharray="136.34 439.82" stroke-dashoffset="-118.75" stroke-linecap="butt"/>
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#8a7060" stroke-width="30"
+                    <circle class="donut-segment" cx="100" cy="100" r="70" fill="none" stroke="#8a7060" stroke-width="30"
                       stroke-dasharray="57.18 439.82" stroke-dashoffset="-255.09" stroke-linecap="butt"/>
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#d4c4b0" stroke-width="30"
+                    <circle class="donut-segment" cx="100" cy="100" r="70" fill="none" stroke="#d4c4b0" stroke-width="30"
                       stroke-dasharray="17.59 439.82" stroke-dashoffset="-312.27" stroke-linecap="butt"/>
                     <text x="100" y="94" text-anchor="middle" font-family="Libre Baskerville, Georgia, serif" font-size="26" font-weight="700" fill="#2C2416">52%</text>
                     <text x="100" y="114" text-anchor="middle" font-family="PT Serif, Georgia, serif" font-size="12" fill="#A89880">unaware</text>
@@ -1041,11 +1049,11 @@
                 <div class="chart-body">
                   <svg width="130" height="130" viewBox="0 0 200 200" aria-hidden="true">
                     <circle cx="100" cy="100" r="70" fill="none" stroke="#F0EBE1" stroke-width="30"/>
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#C4A882" stroke-width="30"
+                    <circle class="donut-segment" cx="100" cy="100" r="70" fill="none" stroke="#C4A882" stroke-width="30"
                       stroke-dasharray="343.06 439.82" stroke-dashoffset="109.96" stroke-linecap="butt"/>
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#B9A590" stroke-width="30"
+                    <circle class="donut-segment" cx="100" cy="100" r="70" fill="none" stroke="#B9A590" stroke-width="30"
                       stroke-dasharray="65.97 439.82" stroke-dashoffset="-233.10" stroke-linecap="butt"/>
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#8a7060" stroke-width="30"
+                    <circle class="donut-segment" cx="100" cy="100" r="70" fill="none" stroke="#8a7060" stroke-width="30"
                       stroke-dasharray="30.79 439.82" stroke-dashoffset="-299.07" stroke-linecap="butt"/>
                     <text x="100" y="94" text-anchor="middle" font-family="Libre Baskerville, Georgia, serif" font-size="26" font-weight="700" fill="#2C2416">78%</text>
                     <text x="100" y="114" text-anchor="middle" font-family="PT Serif, Georgia, serif" font-size="12" fill="#A89880">willing</text>
@@ -1331,6 +1339,28 @@
     lightboxClose.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    // Donut chart scroll animation
+    (function () {
+      const segments = document.querySelectorAll('.donut-segment');
+      segments.forEach(seg => {
+        const finalDash = parseFloat(seg.getAttribute('stroke-dasharray'));
+        seg.style.setProperty('--dash', finalDash);
+        seg.style.strokeDasharray = '0 439.82';
+      });
+
+      const grid = document.querySelector('.charts-grid');
+      if (!grid) return;
+
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          segments.forEach(seg => seg.classList.add('is-animating'));
+          observer.unobserve(grid);
+        }
+      }, { threshold: 0.3 });
+
+      observer.observe(grid);
+    })();
   </script>
 
 </body>
